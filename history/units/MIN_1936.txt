@@ -1,0 +1,195 @@
+#部队编制
+division_template = {
+	name = "米诺斯神圣军团" 
+	division_names_group = MIN_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "米诺斯山地特战部队" 
+	division_names_group = MIN_02
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 0 y = 3 }
+		mountaineers = { x = 0 y = 4 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+#部署地点
+units = {
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4109
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 9837
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 3914
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+	}
+	
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11786
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 3833
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 966
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 4078
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 4178
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 9837
+		division_template = "米诺斯神圣军团"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 895
+		division_template = "米诺斯山地特战部队"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.9
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 9837
+		division_template = "米诺斯山地特战部队"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 3833
+		division_template = "米诺斯山地特战部队"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
+	}
+
+	division= {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 3833
+		division_template = "米诺斯山地特战部队"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
+	}	
+}
+
+# 造装备工厂
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator  = "MIN"
+		}
+		requested_factories = 6
+		progress = 0.20
+		efficiency = 100
+	}
+}

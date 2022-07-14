@@ -1,0 +1,29 @@
+characters = {
+	MSZ_sikadi = {
+		name = "斯卡蒂" 
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MSZ/sikadi.dds"
+			}
+			army = {
+				large = "gfx/leaders/MSZ/sikadi.dds"
+				small = ""
+			}
+		}
+		country_leader = {
+			ideology = integration_of_politics_and_religion
+			traits = { deep_sea_hunter }
+			expire = "2950.1.1"
+			id = -1
+		}
+		corps_commander = {
+			traits={ naval_invader unyielding_defender }
+			skill = 6
+			attack_skill=8
+			defense_skill=6
+			planning_skill=6
+			logistics_skill=8
+			legacy_id=-1
+		}
+	}
+}

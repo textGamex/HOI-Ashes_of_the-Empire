@@ -1,0 +1,61 @@
+music_station = "base_music"
+
+music = {
+    song = "Divano-Era"
+    chance = {
+        base = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_government = religiosity
+            }
+        }
+    }
+}
+
+music = {
+    song = "Enae-Volare-Era"
+    chance = {
+        base = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_government = religiosity
+            }
+        }
+        modifier = {
+            add = 1
+            has_war = yes
+        }
+    }
+}
+
+music = {
+    song = "Sinfoni-Deo-Era"
+    chance = {
+        base = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_government = religiosity
+            }            
+        }
+        modifier = {
+            add = 1
+            has_war = no
+        }
+    }
+}
+
+music = {
+    song = "The-Mass-Era"
+    chance = {
+        base = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_government = religiosity
+            }
+        }
+    }
+}

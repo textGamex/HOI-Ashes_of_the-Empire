@@ -1,0 +1,94 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+MIN_enemy_YUG = {
+	allowed = {
+		original_tag = MIN
+	}
+	enable = {
+		YUG = {
+			controls_state = 44
+			controls_state = 843
+		}
+	}
+	abort = {
+		has_completed_focus = MIN_focus_26
+		MIN = {
+			controls_state = 44
+			controls_state = 843
+		}
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "YUG"
+		value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "YUG"
+		value = 100
+	}		
+}
+
+MIN_enemy_LAT = {
+	allowed = {
+		original_tag = MIN
+	}
+	enable = {
+		focus_progress = {
+			focus = MIN_focus_44
+			progress > 0.1
+		}
+	}
+	abort = {
+		LAT = {
+			is_puppet_of = MIN
+		}
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "LAT"
+		value = 350
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "LAT"
+		value = 350
+	}
+}
+
+# 疯狂造潜艇
+MIN_navy_development_1 = {
+	allowed = {
+		original_tag = MIN
+	}
+	enable = {
+		has_completed_focus = MIN_focus_35
+	}
+	abort = {		
+	}
+	ai_strategy = {
+		type = template_prio	
+		id = submarine
+		value = 500
+	}	
+	ai_strategy = {
+		type = unit_ratio	
+		id = submarine
+		value = 9999
+	}	
+	ai_strategy = {
+		type = equipment_production_factor	
+		id = submarine
+		value = 9999
+	}
+}

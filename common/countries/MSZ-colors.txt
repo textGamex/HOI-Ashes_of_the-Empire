@@ -1,0 +1,4 @@
+MSZ = {
+	color = rgb { 84 132 181 }
+	color_ui = rgb { 66 120 175 }
+}

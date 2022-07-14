@@ -1,0 +1,100 @@
+MIN_historical = {
+	name = "MIN historical plan"
+	desc = "Essentially historical behaviour for MIN"
+
+	allowed = {
+		original_tag = MIN
+	}
+	
+	enable = {
+		is_historical_focus_on = yes
+	}
+
+	abort = {
+		is_historical_focus_on = no
+	}
+
+	ai_national_focuses = {
+		MIN_focus_1
+		MIN_focus_2
+		MIN_focus_18
+		MIN_focus_6
+		MIN_focus_7
+		MIN_focus_14
+		MIN_focus_5
+		MIN_focus_20
+		MIN_focus_31
+		MIN_focus_32
+		MIN_focus_50
+		MIN_focus_42
+		MIN_focus_43
+		MIN_focus_26
+		MIN_focus_40
+		MIN_focus_28
+		MIN_focus_21
+		MIN_focus_27
+		MIN_focus_22
+		MIN_focus_24
+		MIN_focus_25
+		MIN_focus_33
+		MIN_focus_35
+		MIN_focus_75
+		MIN_focus_81
+		MIN_focus_82
+		MIN_focus_41
+		MIN_focus_76
+		MIN_focus_83
+		MIN_focus_85
+		MIN_focus_84
+		MIN_focus_8
+		MIN_focus_13
+		MIN_focus_29
+		MIN_focus_48
+		MIN_focus_46
+		MIN_focus_80
+		MIN_focus_44
+		MIN_focus_47
+		MIN_focus_34
+		MIN_focus_55
+		MIN_focus_72
+		MIN_focus_70
+		MIN_focus_56
+		MIN_focus_59
+		MIN_focus_60
+		MIN_focus_63
+		MIN_focus_65		
+		MIN_focus_39
+		MIN_focus_38
+		MIN_focus_69
+		MIN_focus_73
+		MIN_focus_79
+		MIN_focus_11
+		MIN_focus_16
+		MIN_focus_49
+	}
+
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+
+	focus_factors = {
+		MIN_focus_1 = 1.0
+	}
+}
+

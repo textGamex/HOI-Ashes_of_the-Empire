@@ -1,0 +1,78 @@
+characters = {
+	MIN_high_priests = {
+		name = "帕拉斯"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MIN/High Priests.dds"
+			}
+			army = {
+				large = "gfx/leaders/MIN/High Priests.dds"
+				small = ""
+			}
+		}
+
+		country_leader = {
+			ideology = integration_of_politics_and_religion
+			traits = { high_priest infected_individual }
+			desc = "PALAS_HIGH_PRIESTS_DESC"
+			expire = "2950.1.1.1"
+		}
+
+		corps_commander = {
+			traits={ hill_fighter naval_invader }
+			skill = 6
+			attack_skill=8
+			defense_skill=6
+			planning_skill=6
+			logistics_skill=8
+			legacy_id=-1
+		}
+	}
+
+	MIN_sikadi = {
+		name = MIN_sikadi
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MSZ/sikadi.dds"
+			}
+			army = {
+				large = "gfx/leaders/MSZ/sikadi.dds"
+				small = "gfx/interface/ideas/MIN_palas_navy.dds"
+			}
+			army = {				
+				small = "gfx/interface/ideas/MIN_palas_navy.dds"
+			}
+		}
+
+		advisor = {
+			slot = navy_chief
+			cost = 150
+			name = MIN_sikadi
+
+			allowed = {
+				original_tag = MIN
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				has_country_flag = rho_agree_lease_sikadi	
+			}
+
+			traits = {	
+				MIN_sikadi_deep_sea_hunter							
+			}
+
+			ai_will_do = {
+				base = 7
+
+				modifier = {
+					num_of_naval_factories > 2
+					factor = 3
+				}
+			}
+		}
+	}
+}

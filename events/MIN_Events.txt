@@ -1,0 +1,408 @@
+add_namespace = min_investigation
+add_namespace = min_colony
+add_namespace = min_expand
+add_namespace = min_commander
+
+country_event = {
+	id = min_investigation.1
+
+	title = min_investigation.1.t
+	desc = min_investigation.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = min_investigation.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+				
+		start_civil_war = {
+			ruling_party = feudal_aristocratic
+			ideology = religiosity
+			size = 0.3
+			capital = 106
+			states = { 805 106 }
+		}
+		set_political_party = {
+			ideology = feudal_aristocratic
+			popularity = 100
+		}
+		random_other_country = {
+			limit = {
+				original_tag = MIN
+			}
+			remove_country_leader_trait = infected_individual
+			set_stability = 0.9
+			set_war_support = 0.85			
+		}
+	}
+}
+
+country_event = {
+	id = min_investigation.2
+
+	title = min_investigation.2.t
+	desc = min_investigation.2.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = min_investigation.2.a
+
+		ai_chance = {
+			base = 100
+		}
+
+		RHO = {
+			create_corps_commander = {
+				name = "帕拉斯"
+				portrait_path = "gfx/leaders/MIN/High Priests.dds"
+				traits = { hill_fighter commando infected_individual }
+				skill = 5
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = min_colony.1
+
+	title = min_colony.1.t
+	desc = min_colony.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = min_colony.1.a
+
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = 150
+		MIN = {
+			add_political_power = -100
+			transfer_state = 816
+			transfer_state = 812
+			transfer_state = 770
+			816 = {
+				set_compliance = 70
+				add_building_construction = {
+					type = naval_base
+					level = 5
+					instant_build = yes
+					province = 8182
+				}
+			}
+		}
+		news_event = {
+			id = min_colony_news.1
+			days = 1
+			random = 25
+		}
+		SAR = {
+			remove_ideas = MIN_war_reparations
+		}
+		MIN = {
+			remove_ideas = MIN_sar_war_reparations
+		}
+	}
+
+	option = {
+		name = min_colony.1.b
+
+		ai_chance = {
+			base = 3
+			modifier = {
+				add = 30
+				NOT = {
+					has_idea = MIN_war_reparations
+				}
+			}
+		}
+
+		MIN = {
+			country_event = {
+				id = min_colony_news.2
+				days = 1
+				random = 25
+			}
+		}
+	}
+}
+
+country_event = {
+	id = min_colony.2
+
+	title = min_colony.2.t
+	desc = min_colony.2.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = min_colony.2.a
+
+		ai_chance = {
+			base = 1
+		}
+		MSZ = {
+			transfer_state = 816
+			transfer_state = 812
+			transfer_state = 770
+			add_state_core = 816
+			add_state_core = 812
+			add_state_core = 770
+
+		}	
+		MIN = {
+			puppet = MSZ
+		}
+	}	
+}
+
+country_event = {
+	id = min_expand.1
+
+	title = min_expand.1.t
+	desc = min_expand.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = min_expand.1.a
+
+		ai_chance = {
+			base = 13
+		}
+		MIN = {
+			puppet = SIR
+			news_event = {
+				id = min_expand_news.1
+				days = 1
+				random = 12
+			}
+		}
+	}
+
+	option = {
+		name = min_expand.1.b
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = MIN
+					ratio > 0.75
+				}
+				add = 10
+			}
+			modifier = {
+				naval_strength_ratio = {
+					tag = MIN
+					ratio > 0.8
+				}
+				add = 30
+			}
+			modifier = {
+				MIN = {
+					is_ai = yes
+				}
+				factor = 0
+			}
+		}
+
+		MIN = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SIR
+			}
+			add_ai_strategy = {
+				type = declare_war
+				id = SIR
+				value = 300
+			}
+			news_event = {
+				id = min_expand_news.2
+				days = 1
+				random = 12
+			}
+		}		
+	}
+}
+
+
+country_event = {
+	id = min_expand.2
+
+	title = min_expand.2.t
+	desc = min_expand.2.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = min_expand.2.a
+
+		ai_chance = {
+			base = 1
+		}
+
+		SIR = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = MIN
+				value = 50				}
+			add_ai_strategy = {
+				type = antagonize
+				id = MIN
+				value = 50
+			}
+		}
+		MIN = {
+			news_event = {
+				id = min_expand_news.3
+				days = 1
+				random = 25
+			}	
+
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = YUG
+				value = 50
+			}
+		}
+		YUG = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = MIN
+				value = 35
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = OAU
+				value = 70
+			}
+		}	
+		OAU = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = YUG
+				value = 30
+			}
+		}
+	}
+}
+
+country_event = {
+	id = min_commander.1
+
+	title = min_commander.1.t
+	desc = min_commander.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = min_commander.1.a
+
+		ai_chance = {
+			base = 100
+		}
+		MIN = {
+			country_event = {
+				id = min_commander.2
+				days = 2
+				random = 12
+			}
+		}
+		if = {
+			limit = { has_unit_leader = RHO_skadi }
+			remove_unit_leader = RHO_skadi
+		}
+	}
+
+	option = {
+		name = min_commander.1.b
+
+		ai_chance = {
+			base = 3
+		}
+		MIN = {
+			country_event = {
+				id = min_commander.3
+				days = 2
+				random = 12
+			}
+		}
+	}
+}
+
+news_event = {
+	id = min_commander.2
+
+	title = min_commander.2.t
+	desc = min_commander.2.desc
+	picture = GFX_news_event_sikadi
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = min_commander.2.a
+
+		ai_chance = {
+			base = 100
+		}
+
+		ROOT = {
+			create_navy_leader = {
+				name = "斯卡蒂" 
+				portrait_path = "gfx/leaders/RHO/Skadi.dds"
+				traits = { blue_water_expert seawolf }	
+				skill = 5
+				attack_skill = 6
+				defense_skill = 3
+				maneuvering_skill = 3
+				coordination_skill = 2
+				id = 15
+			}
+			set_country_flag = rho_agree_lease_sikadi
+		}
+		custom_effect_tooltip = available_chief_of_navy
+		custom_effect_tooltip = MIN_sikadi_tt
+	}
+}
+
+news_event = {
+	id = min_commander.3
+
+	title = min_commander.3.t
+	desc = min_commander.3.desc
+	picture = GFX_news_event_sikadi
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = min_commander.3.a
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}

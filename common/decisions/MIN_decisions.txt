@@ -1,0 +1,500 @@
+MIN_army_reform = {
+	MIN_army_reform = {
+
+		allowed = { tag = MIN }
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_experience > 49
+			has_completed_focus = MIN_focus_29
+		}
+	
+		cost = 0
+		ai_will_do = {
+			factor = 9999
+		}
+		days_remove = 60
+	
+		visible = {
+			OR = {
+				has_idea = MIN_A_backward_Army_idea_1
+				has_idea = MIN_A_backward_Army_idea_2
+				has_idea = MIN_A_backward_Army_idea_3					
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_idea = MIN_A_backward_Army_idea_1 }
+				swap_ideas = {
+					remove_idea = MIN_A_backward_Army_idea_1
+					add_idea = MIN_A_backward_Army_idea_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = MIN_A_backward_Army_idea_2 }
+				swap_ideas = {
+					remove_idea = MIN_A_backward_Army_idea_2
+					add_idea = MIN_A_backward_Army_idea_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = MIN_A_backward_Army_idea_3 }
+				remove_ideas = MIN_A_backward_Army_idea_3
+			}
+		}
+		complete_effect = {
+			army_experience = -50
+		}		
+	}
+}
+
+# 贸易关系
+MIN_trade_relationship = {
+
+	# 加强贸易关系
+	strengthening_trade_relations = {
+		allowed = { original_tag = MIN }
+		icon = generic_prepare_civil_war
+
+		target_trigger = {
+			FROM = {
+				AND = {
+					is_major = yes
+				}
+			}
+	    }
+		
+		ai_will_do = {
+			factor = 5
+
+			# 如果有更高的出口法案, AI优先级将更高
+			modifier = {
+				has_idea = export_focus
+				add = 3
+			}
+			modifier = {
+				has_idea = free_trade
+				add = 6
+			}			
+		}
+
+		available = {
+			AND = {
+				has_completed_focus = MIN_focus_15				
+				NOT = {
+					FROM = {
+						has_war_with = MIN
+					}
+				}
+				FROM = {
+					has_opinion = {
+						target = MIN
+						value > 9
+					}	
+				}			
+			}
+		}	
+
+		visible = {
+			NOT = {
+				FROM = {					
+					has_idea = MIN_trade_addition	
+				}
+			}
+		}
+		
+		cost = 150		
+
+		complete_effect = {
+			FROM = {
+				add_ideas = MIN_trade_addition
+			}
+		}
+	}
+}
+
+_debug = {
+	build_MSZ = {
+
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}
+		
+		cost = 1
+		complete_effect = {
+			MSZ = {
+				transfer_state = 816
+				transfer_state = 812
+				transfer_state = 770
+				add_state_core = 816
+				add_state_core = 812
+				add_state_core = 770
+
+			}	
+			MIN = {
+				puppet = MSZ
+			}
+		}
+	}
+
+	t = {
+
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}
+		
+		cost = 1
+		complete_effect = {
+			hidden_effect = {
+				recruit_character = MIN_sikadi
+			}
+			custom_effect_tooltip = rhodes_doctor_will_come_back_tt
+		}		
+		
+	}
+}
+
+public_exclusion_system = {
+		
+	small_propaganda_work = {
+
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}		
+				
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.30
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = MIN_populace_acceptability
+				value = -10
+				tooltip = MIN_small_propaganda_work_tip
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+			modifier = {
+				check_variable = {
+					MIN_populace_acceptability < -1
+				}
+				factor = 0
+			}
+		}
+
+		complete_effect = {
+		}
+	}
+
+	big_propaganda_work = {
+
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}		
+				
+		ai_will_do = {
+			base = 100
+			modifier = {
+				check_variable = {
+					MIN_populace_acceptability < -1
+				}
+				factor = 0
+			}
+		}
+		 
+		days_remove = 60
+
+		modifier = {
+			political_power_cost = 0.50
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = MIN_populace_acceptability
+				value = -25
+				tooltip = big_propaganda_work_tip
+			}
+		}
+		
+		complete_effect = {
+		}
+	}
+		
+	remove_infected_individual = {
+
+		allowed = {
+			original_tag = MIN
+		}	
+		
+		available = {
+			check_variable = {
+				MIN_populace_acceptability < 1				
+			}
+		}
+
+		ai_will_do = {
+			base = 9999
+		}
+
+		days_remove = 60
+
+		modifier = {
+			political_power_cost = 0.50
+		}
+
+		remove_effect = {
+			remove_country_leader_trait = infected_individual
+		}
+	}
+}
+
+the_birth_of_heroes = {
+	propaganda_palas = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}		
+				
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.50
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = 15
+				tooltip = propaganda_palas_tip
+			}
+		}
+	}
+
+	test = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		visible = {
+			is_debug = yes
+		}
+
+		available = {
+			always = yes
+		}		
+
+		complete_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = 15000
+				tooltip = propaganda_palas_tip
+			}
+		}
+	}
+
+	cover_up_evil = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			always = yes
+		}		
+				
+		days_remove = 70
+
+		modifier = {
+			political_power_cost = 0.50
+			stability_weekly_factor = -0.001
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				has_stability < 0.65
+				factor = 0
+			}
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = 20
+				tooltip = cover_up_evil_tip
+			}
+		}
+	}
+
+	palas_parade = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			has_army_experience > 10
+			has_air_experience  > 10
+			has_navy_experience  > 10
+		}		
+				
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.10
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = 10
+				tooltip = palas_parade_tip
+			}
+		}
+
+		complete_effect = {
+			air_experience = -10
+			navy_experience	 = -10
+			army_experience = -10
+		}
+	}
+
+	palas_war_goddess = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			check_variable = {
+				MIN_great_value > 99		
+			}		
+		}	
+
+		visible = {
+			NOT = {
+				has_country_leader_with_trait = war_goddess
+			}
+		}
+
+		ai_will_do = {
+			base = 9999
+		}
+
+		custom_cost_trigger = {
+			check_variable = {
+				MIN_great_value > 99		
+			}	
+		}
+		
+		custom_cost_text = the_birth_of_heroes_cost
+
+		complete_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = -100
+			}
+			add_country_leader_trait = war_goddess
+		}
+	}
+
+	palas_goddess_of_wisdom = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			check_variable = {
+				MIN_great_value > 99		
+			}		
+		}		
+
+		visible = {
+			NOT = {
+				has_country_leader_with_trait = goddess_of_wisdom
+			}
+		}
+
+		ai_will_do = {
+			base = 9999
+		}
+
+		custom_cost_trigger = {
+			check_variable = {
+				MIN_great_value > 99		
+			}	
+		}
+		
+		custom_cost_text = the_birth_of_heroes_cost
+
+		complete_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = -100
+			}
+			add_country_leader_trait = goddess_of_wisdom
+		}
+	}
+
+	palas_goddess_of_victory = {
+		allowed = {
+			original_tag = MIN
+		}	
+
+		available = {
+			check_variable = {
+				MIN_great_value > 99		
+			}		
+		}
+
+		visible = {
+			NOT = {
+				has_country_leader_with_trait = goddess_of_victory
+			}
+		}
+
+		ai_will_do = {
+			base = 9999
+		}
+
+		custom_cost_trigger = {
+			check_variable = {
+				MIN_great_value > 99		
+			}	
+		}
+		
+		custom_cost_text = the_birth_of_heroes_cost
+
+		complete_effect = {
+			add_to_variable = {
+				var = MIN_great_value
+				value = -100
+			}
+			add_country_leader_trait = goddess_of_victory
+		}
+	}
+}

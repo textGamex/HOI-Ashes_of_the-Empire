@@ -1,0 +1,68 @@
+﻿l_english:
+ min_investigation_news.1.t:0 "开始调查帕拉斯"
+ min_investigation_news.1.desc:0 "我们的人已经开始调查帕拉斯了，相信调查报告很快就能送到您的办公室上。" 
+ min_investigation_news.1.a:0 "很好。"
+ min_investigation.1.t:0 "调查报告"
+ min_investigation.1.desc:0 "帕拉斯：感染者。"
+ min_investigation.1.a:0 "呵, 那个女人"
+
+ min_investigation.2.t:0 "帕拉斯逃向[RHO.GetName]"
+ min_investigation.2.desc:0 "[RHO.GetName]收留帕拉斯"
+ min_investigation.2.a:0 "那个渣滓！"
+
+ min_colony.1.t:0 "[MIN.GetName]想购买我国一小块领土"
+ min_colony.1.desc:0 ""
+ min_colony.1.a:0 "卖了"
+ min_colony.1.b:0 "不卖"
+
+ min_colony.2.t:0 "非洲殖民地管理问题"
+ min_colony.2.desc:0 ""
+ min_colony.2.a:0 "让斯卡蒂去吧" 
+
+ min_colony_news.1.t:0 "[SAR.GetName]同意出售领土给[MIN.GetName]"
+ min_colony_news.1.desc:0 "[SAR.GetName]同意出售领土"
+ min_colony_news.1.a:0 "不错, 算他们识相"
+ min_colony_news.1.b:0 "好的"
+ min_colony_news.1.c:0 "这年头谁都可以搞海外殖民地了吗?"
+
+ min_colony_news.2.t:0 "[SAR.GetName]不同意出售领土给[MIN.GetName]"
+ min_colony_news.2.desc:0 "[SAR.GetName]不同意出售领土给[MIN.GetName]"
+ min_colony_news.2.a:0 "凸(艹皿艹 )"
+ min_colony_news.2.b:0 "他们想的美"
+ min_colony_news.2.c:0 "莫名其妙"
+
+ min_expand.1.t:0 "[MIN.GetName]要求我们臣服"
+ min_expand.1.desc:0 ""
+ min_expand.1.a:0 "我们别无选择"
+ min_expand.1.b:0 "怎么可能!"
+
+ min_expand_news.1.t:0 "[MIN.GetName]在地中海的扩张"
+ min_expand_news.1.desc:0 "[SIR.GetName]政府已经同意与[MIN.GetName]签订一项条约, 把自己置于[MIN.GetName]的保护之下"
+ min_expand_news.1.a:0 "向罗马进军"
+ min_expand_news.1.b:0 "我们毫无办法"
+ min_expand_news.1.c:0 "世界大战的味道"
+
+ min_expand_news.2.t:0 "[SIR.GetName]拒绝向[MIN.GetName]妥协"
+ min_expand_news.2.desc:0 "战争一触即发"
+ min_expand_news.2.a:0 "他们怎么敢的啊!"
+ min_expand_news.2.b:0 "绝不后退!"
+ min_expand_news.2.c:0 "看来战争是不可避免了"
+  
+ min_expand.2.t:0 "[MIN.GetName]邀请我们一起瓜分[YUG.GetName]"
+ min_expand.2.desc:0 "[MIN.GetName]邀请我们一起瓜分[YUG.GetName]"
+ min_expand.2.a:0 "当然没问题"
+
+ min_expand_news.3.t:0 "[OAU.GetName]同意与我们一起瓜分[YUG.GetName]"
+ min_expand_news.3.desc:0 "[OAU.GetName]同意与我们一起瓜分[YUG.GetName], 现在他们的军队已经在准备当中了."
+ min_expand_news.3.a:0 "好耶!"
+
+ min_commander.1.t:0 "来自米诺斯的指挥官租借请求"
+ min_commander.1.desc:0 "与罗德岛隔海相望的邻国米诺斯近期频繁向我们抛出橄榄枝，根据一些来自米诺斯的干员提供的情报，那里曾是一个政教合一的落后国家，但近年来正遭遇社会剧变，将来可能会成为地中海势力圈另一支不可忽视的力量。尽管米诺斯民族主义者对我们占据的岛屿虎视眈眈，在我们统一卡兹戴尔之前最好还是不要与他们翻脸。此次米诺斯的使者前来，表示愿意放弃对地中海诸岛屿的宣称，条件是要让试图流落到罗德岛的深海猎人斯卡蒂暂时去协助他们的潜艇部队建设。考虑到我们目前还不需要海军指挥官，等以后还可以再召回斯卡蒂，这看起来是笔双赢的买卖。"
+ min_commander.1.a:0 "我们批准了租借斯卡蒂的请求"
+ min_commander.1.b:0 "我们最好不要让蒂蒂跟他们一起"
+ min_commander.2.t:0 "罗德岛批准了我们的海军指挥官租借请求"
+ min_commander.2.desc:0 "看来罗德岛也渴望暂时与我们保持友好关系，谈判进展的相当顺利，名为斯卡蒂的阿戈尔人很快就会抵达雅典，她无疑将成为我们经验最丰富的海军将领。不过，据说她的性格不太合群，我们得慎重考虑该让她指挥何种规模的舰队"
+ min_commander.2.a:0 "欢迎来到米诺斯，深海猎人"
+ min_commander.3.t:0 "罗德岛拒绝了我们的海军指挥官租借请求"
+ min_commander.3.desc:0 "罗德岛方面坚称，这位深海猎人对他们是无价之宝，具有不可替代的战略价值。虽然我们实在看不出来他们要海军指挥官有什么用，但也只能放弃这件事了。"
+ min_commander.3.a:0 "真是可惜"

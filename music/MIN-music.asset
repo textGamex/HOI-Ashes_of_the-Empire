@@ -1,0 +1,23 @@
+music = {
+    name = "Divano-Era"
+    file = "Divano-Era.ogg"
+    volume = 1
+}
+
+music = {
+    name = "Enae-Volare-Era"
+    file = "Enae-Volare-Era.ogg"
+    volume = 1
+}
+
+music = {
+    name = "Sinfoni-Deo-Era"
+    file = "Sinfoni-Deo-Era.ogg"
+    volume = 1
+}
+
+music = {
+    name = "The-Mass-Era"
+    file = "The-Mass-Era.ogg"
+    volume = 1
+}

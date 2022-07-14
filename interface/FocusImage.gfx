@@ -1,0 +1,22 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_palas_ambition"
+		texturefile = "gfx/interface/goals/palas_ambition.dds"			
+	}	
+	
+	SpriteType = {
+		name = "GFX_attack_sir"
+		texturefile = "gfx/interface/goals/attack_sir.dds"			
+	}	
+
+	SpriteType = {
+		name = "GFX_lease_sikadi"
+		texturefile = "gfx/interface/goals/lease_sikadi.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_Governor_General_of_Africa"
+		texturefile = "gfx/interface/goals/Governor_General_of_Africa.dds"			
+	}
+}

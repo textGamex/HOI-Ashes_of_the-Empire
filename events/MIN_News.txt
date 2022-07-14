@@ -1,0 +1,186 @@
+add_namespace = min_investigation_news
+add_namespace = min_colony_news
+add_namespace = min_expand_news
+
+news_event = {
+	id = min_investigation_news.1
+
+	title = min_investigation_news.1.t
+	desc = min_investigation_news.1.desc
+	picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = min_investigation_news.1.a
+	}
+}
+
+# 同意租借领土
+news_event = {
+	id = min_colony_news.1
+
+	title = min_colony_news.1.t
+	desc = min_colony_news.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = min_colony_news.1.a
+		trigger = {
+			tag = MIN
+		}
+	}
+
+	option = {
+		name = min_colony_news.1.b
+		trigger = {
+			tag = SAR
+		}
+	}
+
+	option = {
+		name = min_colony_news.1.c
+		trigger = {
+			NOT = {
+				tag = MIN
+			}
+			NOT = {
+				tag = SAR
+			}
+		}
+	}
+}
+
+# 不同意同意租借领土
+news_event = {
+	id = min_colony_news.2
+
+	title = min_colony_news.2.t
+	desc = min_colony_news.2.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = min_colony_news.2.a
+		trigger = {
+			tag = MIN
+		}
+	}
+
+	option = {
+		name = min_colony_news.2.b
+		trigger = {
+			tag = SAR
+		}
+	}
+
+	option = {
+		name = min_colony_news.2.c
+		trigger = {
+			NOT = {
+				tag = MIN
+			}
+			NOT = {
+				tag = SAR
+			}
+		}
+	}
+}
+
+# 叙拉古臣服	
+news_event = {
+	id = min_expand_news.1
+
+	title = min_expand_news.1.t
+	desc = min_expand_news.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = min_expand_news.1.a
+		trigger = {
+			tag = MIN
+		}
+	}
+
+	option = {
+		name = min_expand_news.1.b
+		trigger = {
+			tag = SIR
+		}
+	}
+
+	option = {
+		name = min_expand_news.1.c
+		trigger = {
+			NOT = {
+				tag = MIN
+			}
+			NOT = {
+				tag = SIR
+			}
+		}
+	}
+}
+
+news_event = {
+	id = min_expand_news.2
+
+	title = min_expand_news.2.t
+	desc = min_expand_news.2.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = min_expand_news.2.a
+		trigger = {
+			tag = MIN
+		}
+	}
+
+	option = {
+		name = min_expand_news.2.b
+		trigger = {
+			tag = SIR
+		}
+	}
+
+	option = {
+		name = min_expand_news.2.c
+		trigger = {
+			NOT = {
+				tag = MIN
+			}
+			NOT = {
+				tag = SIR
+			}
+		}
+	}
+}
+
+
+# 乌萨斯同意一起瓜分伊利里亚
+news_event = {
+	id = min_expand_news.3
+
+	title = min_expand_news.3.t
+	desc = min_expand_news.3.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+
+	option = {
+		name = min_expand_news.3.a		
+	}
+}

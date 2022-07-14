@@ -1,0 +1,77 @@
+on_actions = {
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = MIN }
+				}
+				RHO = {
+					country_event = {
+						id = min_investigation.2
+						days = 5
+						random_days = 3 
+					}
+				}
+			}
+		}
+	}
+
+	on_capitulation = {
+		
+		# 瓜分伊利里亚
+		effect = {
+			if = {
+				limit = { 
+					ROOT = { original_tag = YUG }					
+					OR = {
+						FROM = { original_tag = MIN }
+						YUG = {
+							has_war_with = MIN
+						}
+					}
+				}
+				MIN = {
+					white_peace = YUG
+	
+					transfer_state = 44
+					transfer_state = 843
+					transfer_state = 802
+					transfer_state = 803
+				}			
+				OAU = {
+					white_peace = YUG
+					puppet = YUG
+				}
+	
+				#AI策略调整
+				MIN = {
+					add_ai_strategy = {
+						type = prepare_for_war
+						id = YUG
+						value = -50
+					}
+				}
+				YUG = {
+					add_ai_strategy = {
+						type = prepare_for_war
+						id = MIN
+						value = -35
+					}
+					add_ai_strategy = {
+						type = prepare_for_war
+						id = OAU
+						value = -70
+					}
+				}
+				OAU = {
+					add_ai_strategy = {
+						type = prepare_for_war
+						id = YUG
+						value = -30
+					}
+				}
+				clr_country_flag = annex_yug_flag
+			}			
+		}
+	}
+}

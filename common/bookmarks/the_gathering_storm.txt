@@ -1,0 +1,164 @@
+bookmarks = {
+	bookmark = {
+		name = "DARK_AGES_NAME"
+		desc = "DARK_AGES_DESC"
+		date = 1935.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "RHO"
+		default = yes
+		
+		"RHO"={
+			history = "RHO_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				RHO_The_legacy_of_Babel
+				RHO_Saving_justice
+				RHO_A_popular_medical_group
+			}
+			focuses = {
+				RHO_engineering_department
+				RHO_eye_of_PRTS
+				RHO_rescue_doctor
+			}	
+		}
+		
+		"URS"={
+			history = "URS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}	
+		}
+		
+		"COL"={
+			history = "COL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			    
+			}
+			focuses = {
+				
+			}	
+		}
+		
+		"GAL"={
+			history = "GAL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}	
+		}
+		
+		"YAN"={
+			history = "YAN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}	
+		}
+		
+		"VIC" = {
+			history = "VIC_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			    vic_broken_alliance
+				vic_great_crisis_1
+				vic_guard_college
+			}
+			focuses = {
+				VIC_focus_1
+				VIC_2
+				VIC_3
+			}	
+		}
+		
+		"OAU"={
+			history = "URS_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			    OAU_feudal_country_modifier
+				OAU_kingship_crisis
+				OAU_bohemia_industrial_heart
+			}
+			focuses = {
+				
+			}	
+		}
+		
+		"LEI"={
+			history = "LEI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+			    LEI_ADIWGLNE
+				LEI_Wave_nationalism
+				LEI_Western_workers_movement
+			}
+			focuses = {
+				LEI_workers_revolution
+				LEI_Defend_crown_Dynasty
+				LEI_strength_nation_sprite
+			}	
+		}
+		
+		"REM"={
+		    minor = yes
+			history = "REM_GATHERING_STORM_DESC"
+			ideas = {
+				REM_fierce_and_aggressive_01
+				REM_manpower_come_in
+			}
+			focuses = {
+				REM_invade_chernobog
+				REM_insane_soldiers
+				REM_end_of_the_chess_piece
+			}
+		}
+
+		"LUN"={
+			minor = yes
+			history = "LUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				LUN_Public_order_disorder_ideas
+				LUN_Free_trade_hub_ideas
+				LUN_infected_infiltration_01
+			}
+			focuses = {
+				LUN_Public_security_reform
+				LUN_Longmen_College
+				LUN_Budget
+			}	
+		}
+
+		"MIN" = {
+			minor = yes
+			history = "MIN_INTRODUCE_DESC"
+			ideology = neutrality
+			ideas = {				
+				MIN_Theocracy_idea
+				MIN_Backward_industry_idea1
+				MIN_high_quality_wolfpack
+			}
+			focuses = {
+				MIN_focus_75
+				# MIN_focus_19
+				MIN_focus_40
+				MIN_focus_32
+			}	
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			
+		}
+	}
+}

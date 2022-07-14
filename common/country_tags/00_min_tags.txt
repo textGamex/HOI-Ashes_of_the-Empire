@@ -1,0 +1,1 @@
+MSZ = "countries/MSZ.txt"

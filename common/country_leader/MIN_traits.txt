@@ -1,0 +1,56 @@
+leader_traits = {
+
+	high_priest = {
+        war_support_factor = 0.1
+		stability_factor = 0.30
+		political_power_factor = 0.1
+		war_stability_factor = 0.15	
+		drift_defence_factor = 0.20
+		religiosity_drift = 0.01
+	}
+
+	overweeningly_ambitious = {
+		ai_focus_war_production_factor = 0.25
+		ai_focus_aggressive_factor = 0.25
+		production_speed_arms_factory_factor = 0.13
+		ai_desired_divisions_factor = 1.20
+
+	}
+
+	infected_individual = {
+		stability_factor = -0.15
+		political_power_cost = 0.15
+	}
+
+	hidden_trait = {
+		political_power_cost = 0.35  
+	}
+
+	war_goddess = {
+		Army_core_attack_factor = 0.2
+		Army_core_defence_factor = 0.2
+		recon_factor = 0.1
+		planning_speed = 0.25
+		mobilization_speed = 0.20
+	}
+
+	goddess_of_wisdom = {
+		research_speed_factor = 0.10
+		naval_doctrine_cost_factor = -0.15
+		air_doctrine_cost_factor = -0.15
+		land_doctrine_cost_factor = -0.15
+	}
+
+	goddess_of_victory = {
+		war_stability_factor = 0.20
+		conscription_factor = 0.20
+		surrender_limit = 0.30 
+	}
+
+	MIN_sikadi_deep_sea_hunter = {
+		navy_submarine_attack_factor = 0.15
+		night_spotting_chance = 0.20
+		naval_torpedo_hit_chance_factor = 0.10
+		convoy_raiding_efficiency_factor = 0.15
+	}
+}

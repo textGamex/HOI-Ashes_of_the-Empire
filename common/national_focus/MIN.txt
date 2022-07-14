@@ -1,0 +1,2879 @@
+focus_tree = {
+	id = MIN_FOCUS
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = MIN
+		}
+	}
+
+	# 准备开始进行工业改革
+	focus = {
+		id = MIN_focus_1
+		icon = GFX_goal_generic_construction
+		cost = 6
+
+		x = 7
+		y = 0
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MIN_start_industrial_reform_focus_1
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+
+			swap_ideas = {
+				remove_idea = MIN_Backward_industry_idea1
+				add_idea = MIN_Backward_industry_idea2
+			}
+			add_political_power = 50
+		}
+	}
+
+	# 建立大型垄断企业
+	focus = {
+		id = MIN_focus_2
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 6
+
+		x = -5
+		y = 1
+		relative_position_id = MIN_focus_1
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = MIN_focus_1 }
+		mutually_exclusive = { focus = MIN_focus_3 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }  # 工业
+
+		completion_reward = {
+			add_ideas = MIN_Monopolies_idea
+		}
+	}
+
+	# 实行市场经济体制
+	focus = {
+		id = MIN_focus_3
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+
+		x = 5
+		y = 1
+		relative_position_id = MIN_focus_1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_1 }
+		mutually_exclusive = { focus = MIN_focus_2 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }  # 工业
+
+		completion_reward = {
+			add_ideas = MIN_Market_Economy_idea
+		}
+	}
+
+	focus = {
+		id = MIN_focus_4
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_full_control_of_state = 47
+				has_full_control_of_state = 186
+			}
+		}
+		prerequisite = { focus = MIN_focus_3 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					is_controlled_by = ROOT
+					OR = {
+						state = 47
+						state = 186
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MIN_focus_5
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8
+
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_2
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_full_control_of_state = 731
+				has_full_control_of_state = 47
+				has_full_control_of_state = 185
+			}
+		}
+		prerequisite = { focus = MIN_focus_2 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+			731 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			47 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			185 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# 重视基础设施建设
+	focus = {
+		id = MIN_focus_6
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 7
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				has_full_control_of_state = 805
+				has_full_control_of_state = 106
+				has_full_control_of_state = 731
+				has_full_control_of_state = 185
+				has_full_control_of_state = 47
+				has_full_control_of_state = 186
+			}
+		}
+
+		prerequisite = { focus = MIN_focus_2 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+			805 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			106 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			731 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			185 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			47 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			186 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MIN_focus_7
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_2
+
+		available = {
+			OR = {
+				has_full_control_of_state = 805
+				has_full_control_of_state = 106
+				has_full_control_of_state = 731
+				has_full_control_of_state = 185
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = MIN_focus_2 }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }  # 工业
+		completion_reward = {
+			add_stability = 0.06
+			805 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			106 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			731 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			185 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# 发展沿海地带
+	focus = {
+		id = MIN_focus_8
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 6
+
+		x = -1
+		y = 2
+		relative_position_id = MIN_focus_1
+
+		available = {
+			OR = {
+				has_full_control_of_state = 47
+				has_full_control_of_state = 186
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = MIN_focus_2 focus = MIN_focus_3 }
+		search_filters = { FOCUS_FILTER_INDUSTRY  }  # 工业
+		completion_reward = {
+			47 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}	
+			}	
+			186 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+	
+	# 加强海上贸易 
+	focus = {
+		id = MIN_focus_9
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 7
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		prerequisite = { focus = MIN_focus_3 }
+		completion_reward = {
+			add_ideas = MIN_trade_fleet_idea
+		}
+	}
+
+	# 招商引资
+	focus = {
+		id = MIN_focus_10
+		icon = GFX_focus_generic_concessions
+		cost = 7
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_9
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_9 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 } # 添加地图外工厂
+			add_ideas = MIN_Advanced_management_experience_idea
+		}
+	}
+
+	# 石油勘探
+	focus = {
+		id = MIN_focus_11
+		icon = GFX_goal_generic_production
+		cost = 6
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_8
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			MIN = {
+				controls_state = 47
+			}
+		}
+
+		prerequisite = { focus = MIN_focus_9 focus = MIN_focus_8 focus = MIN_focus_7 focus = MIN_focus_5 focus = MIN_focus_4 focus = MIN_focus_6 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 10
+				state = 47
+			}
+		}
+	}
+
+	focus = {
+		id = MIN_focus_12
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 4
+
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_3
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				has_full_control_of_state = 731
+				has_full_control_of_state = 185
+			}
+			threat > 0.15
+		}
+		prerequisite = { focus = MIN_focus_3 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }  # 工业
+		completion_reward = {
+
+			731 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			185 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# 扶贫支教
+	focus = {
+		id = MIN_focus_13
+		icon = GFX_focus_research
+		cost = 6
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_7
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = MIN_focus_7 }
+		completion_reward = {
+			add_ideas = MIN_teacher_idea
+		}
+	}
+
+	# 民族工业
+	focus = {
+		id = MIN_focus_14
+		icon = GFX_goal_support_fascism
+		cost = 7
+	
+		x = 0
+		y = 2
+		relative_position_id = MIN_focus_6
+		
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_STABILITY }  # 稳定度
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }   # 战争支持度
+		prerequisite = { focus = MIN_focus_7  }
+		prerequisite = { focus = MIN_focus_6  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MIN_Backward_industry_idea2
+				add_idea = MIN_Backward_industry_idea3
+			}
+		}
+	}
+
+	# 世界工厂
+	focus = {
+		id = MIN_focus_15
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 7
+	
+		x = 0
+		y = 2
+		relative_position_id = MIN_focus_4
+		
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = MIN_focus_4  }
+		prerequisite = { focus = MIN_focus_9  }
+		prerequisite = { focus = MIN_focus_10  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MIN_Backward_industry_idea2
+				add_idea = MIN_Backward_industry_idea4
+			}
+			unlock_decision_category_tooltip = MIN_trade_relationship
+		}
+	}
+
+	# 发展炼油厂
+	focus = {
+		id = MIN_focus_16
+		icon = GFX_goal_generic_oil_refinery
+		cost = 6
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_11
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				has_full_control_of_state = 106
+				has_full_control_of_state = 186
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = MIN_focus_11  }
+		completion_reward = {
+
+			add_tech_bonus = {
+				name = MIN_focus_16
+				bonus = 3.0
+				uses = 1
+				category = synth_resources
+			}
+			106 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			186 = {
+				if = {
+					limit = {
+						is_controlled_by = ROOT	
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	# 大炼橡胶
+	focus = {
+		id = MIN_focus_17
+		icon = GFX_focus_generic_rubber
+		cost = 6
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_11
+		
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = MIN_focus_11  }
+		completion_reward = {
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = rubber
+				amount = 2
+			}
+		}
+	}
+
+	# 支持帕拉斯继续执政
+	focus = {
+		id = MIN_focus_18
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+	
+		x = 20
+		y = 0
+		mutually_exclusive = { focus = MIN_focus_19 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_political_power = 150		
+			add_stability = -0.15		
+		}
+	}
+
+	# 调查帕拉斯
+	focus = {
+		id = MIN_focus_19
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 7
+	
+		x = 30
+		y = 0
+		mutually_exclusive = { focus = MIN_focus_18 }
+
+		available = {
+			has_country_flag = our_team_had_finished_this_focus
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			custom_effect_tooltip = MIN_focus_19_tip
+			news_event = {
+				id = min_investigation_news.1				
+			}
+			hidden_effect = {
+				country_event = {
+					id = min_investigation.1
+					days = 10 
+					random = 50 
+					random_days = 10 
+				}
+			}
+		}
+	}
+
+	# 奴隶制度改革方案-1
+	focus = {
+		id = MIN_focus_20
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 6
+	
+		x = -4
+		y = 1
+		relative_position_id = MIN_focus_18
+
+		prerequisite = { focus = MIN_focus_18 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = MIN_slavery_reform
+				days = 180
+			}
+		}
+	}
+
+	# 奴隶制度改革方案-2
+	focus = {
+		id = MIN_focus_21
+		icon = GFX_focus_generic_treaty
+		cost = 7
+	
+		x = 16
+		y = 2
+		prerequisite = { focus = MIN_focus_20 }
+
+		available = {
+			NOT = {
+				has_idea = MIN_slavery_reform
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_FRA_OCCUPATION_COST }
+
+		completion_reward = {
+			remove_ideas = { 
+				MIN_Slavery_idea
+			}
+		}
+	}
+
+	# 解决帕拉斯身份问题
+	focus = {
+		id = MIN_focus_22
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 7
+	
+		x = -1
+		y = 1
+		relative_position_id = MIN_focus_18
+		prerequisite = { focus = MIN_focus_18 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { 
+			FOCUS_FILTER_STABILITY 
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			add_political_power = -150
+			add_stability = 0.1
+		}
+	}
+
+	# 隐藏自己
+	focus = {
+		id = MIN_focus_23
+		icon = GFX_goal_generic_national_unity
+		cost = 7
+	
+		x = 1
+		y = 1
+		relative_position_id = MIN_focus_22
+
+		prerequisite = { focus = MIN_focus_22 }
+		mutually_exclusive = { focus = MIN_focus_24 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			remove_country_leader_trait = infected_individual
+			add_country_leader_trait = hidden_trait
+		}
+	}
+
+	# 改变国民对感染者的偏见
+	focus = {
+		id = MIN_focus_24
+		icon = GFX_goal_generic_propaganda
+		cost = 7
+	
+		x = -1
+		y = 1
+		relative_position_id = MIN_focus_22
+		prerequisite = { focus = MIN_focus_22 }
+		mutually_exclusive = { focus = MIN_focus_23 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			set_country_flag = MIN_populace_acceptability_flag
+			set_variable = {
+				var = MIN_populace_acceptability
+				value = 100				
+			}
+			unlock_decision_category_tooltip = public_exclusion_system
+		}
+	}
+
+	# 英雄的诞生
+	focus = {
+		id = MIN_focus_25
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 6
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_24
+
+		prerequisite = { focus = MIN_focus_24 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			set_country_flag = MIN_the_birth_of_heroes_flag
+			unlock_decision_category_tooltip = the_birth_of_heroes
+			set_variable = {
+				var = MIN_great_value
+				value = 0
+			}
+		}
+	}
+	
+	# 伊利里亚问题
+	focus = {
+		id = MIN_focus_26
+		icon = GFX_goal_generic_major_war
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_43
+
+		prerequisite = {
+			focus = MIN_focus_43
+		}
+
+		bypass = {
+			OR = {
+				YUG = {
+					exists = no
+				}
+				NOT = {
+					YUG = {
+						has_full_control_of_state = 44
+						has_full_control_of_state = 802
+						has_full_control_of_state = 803				
+						has_full_control_of_state = 843
+					}
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		will_lead_to_war_with = YUG
+		completion_reward = {
+			declare_war_on = {
+				target = YUG
+				type = annex_everything
+			}
+			OAU = {				
+				declare_war_on = {
+					target = YUG
+					type = puppet_wargoal_focus
+				}
+			}			
+			set_country_flag = annex_yug_flag
+		}
+	}
+
+	# 实现人人平等
+	focus = {
+		id = MIN_focus_27
+		icon = GFX_goal_continuous_increase_nu
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_21
+
+		prerequisite = { focus = MIN_focus_21 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { 
+			FOCUS_FILTER_MANPOWER 
+			FOCUS_FILTER_FRA_OCCUPATION_COST	
+			FOCUS_FILTER_POLITICAL		 
+			FOCUS_FILTER_INDUSTRY	
+		}
+
+		completion_reward = {	
+			add_ideas = MIN_everyone_is_equal
+		}
+	}
+
+	# 重新整合伊利里亚地区
+	focus = {
+		id = MIN_focus_28
+		icon = GFX_goal_anschluss
+		cost = 7
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_26
+
+		prerequisite = { focus = MIN_focus_26 }
+
+		available = {
+			OR = {
+				has_full_control_of_state = 44
+				has_full_control_of_state = 802
+				has_full_control_of_state = 803				
+				has_full_control_of_state = 843
+			}
+		}
+
+		search_filters = { 
+			FOCUS_FILTER_ANNEXATION 
+			FOCUS_FILTER_MANPOWER
+		}
+
+		completion_reward = {			
+			if = {
+				limit = {
+					has_full_control_of_state = 44
+				}
+				add_state_core = 44
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 802
+				}
+				add_state_core = 802
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 803
+				}
+				add_state_core = 803
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 843
+				}
+				add_state_core = 843
+			}			
+			custom_effect_tooltip = MIN_focus_28_tooltip
+		}		
+	}
+
+	# 军事重组
+	focus = {
+		id = MIN_focus_29
+		icon = GFX_focus_chi_army_reform
+		cost = 7
+	
+		x = 43
+		y = 0
+		ai_will_do = {
+			factor = 1
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			unlock_decision_category_tooltip = MIN_army_reform
+		}
+	}
+
+	# 重视山地部队
+	focus = {
+		id = MIN_focus_30
+		icon = GFX_focus_GRE_a_land_of_mountains
+		cost = 5
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_29
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = MIN_focus_29 }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 3.0
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
+	}
+
+	# 添加科研槽
+	focus = {
+		id = MIN_focus_31
+		icon = GFX_focus_research
+		cost = 6
+	
+		x = 5
+		y = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = MIN_focus_14 focus = MIN_focus_15 }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	# 1984远景计划
+	focus = {
+		id = MIN_focus_32
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 7
+	
+		x = 7
+		y = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = MIN_focus_14 focus = MIN_focus_15 }
+		completion_reward = {
+			add_ideas = MIN_1984_development_plan_idea
+		}
+	}
+
+	# 重视海军
+	focus = {
+		id = MIN_focus_33
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 4
+	
+		x = 53
+		y = 0
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+
+		completion_reward = {
+			navy_experience = 20
+		}
+	}
+
+	# 米诺斯海军学院
+	focus = {
+		id = MIN_focus_34
+		icon = GFX_focus_usa_honor_the_confederacy
+		cost = 6
+	
+		x = -2
+		y = -1
+		relative_position_id = MIN_focus_35
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_33 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_naval_academy
+		}
+	}
+
+	# 精英化狼群
+	focus = {
+		id = MIN_focus_35
+		icon = GFX_goal_generic_wolf_pack
+		cost = 6
+	
+		x = -4
+		y = 2
+		relative_position_id = MIN_focus_33
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = MIN_focus_51
+		}
+		prerequisite = { focus = MIN_focus_33 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_high_quality_wolfpack
+		}
+	}
+
+	# 混合动力潜艇
+	focus = {
+		id = MIN_focus_36
+		icon = GFX_goal_generic_navy_submarine
+		cost = 7
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_35
+
+		prerequisite = { focus = MIN_focus_35 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_sybrid_submarine
+		}
+	}
+
+	# 优化鱼雷发射流程
+	focus = {
+		id = MIN_focus_37
+		icon = GFX_goal_poland_goal
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_35
+
+		prerequisite = { focus = MIN_focus_35 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_accelerate_torpedo_launch
+		}
+	}
+
+	# 绞杀敌人海上补给线
+	focus = {
+		id = MIN_focus_38
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 7
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_35
+		
+		prerequisite = { focus = MIN_focus_35 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_attack_offshore_supply_line
+		}
+	}
+
+	# 模块化设计
+	focus = {
+		id = MIN_focus_39
+		icon = GFX_goal_generic_navy_submarine
+		cost = 7
+	
+		x = 4
+		y = 1
+		relative_position_id = MIN_focus_35
+		
+		prerequisite = { focus = MIN_focus_35 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_modular_design
+		}
+	}
+
+	# 美丽新世界
+	focus = {
+		id = MIN_focus_40
+		icon = GFX_focus_generic_africa_naval
+		cost = 7
+
+		x = 15
+		y = 7
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			SAR = {
+				country_event = {
+					id = min_colony.1
+					days = 3
+					random = 20
+					random_days = 1 
+				}
+			}			
+		}
+	}
+
+	# 开发新世界
+	focus = {
+		id = MIN_focus_41
+		icon = GFX_focus_generic_africa_factory
+		cost = 7
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_82
+
+		available = {
+			816 = {
+				OR = {
+					is_controlled_by = ROOT
+					is_controlled_by = MSZ
+				}
+			}
+			812 = {
+				OR = {
+					is_controlled_by = ROOT
+					is_controlled_by = MSZ
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = {
+			focus = MIN_focus_82
+		}
+		completion_reward = {
+			816 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes					
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes					
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes					
+				}
+			}
+			812 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes					
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes					
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes					
+				}
+			}
+		}
+	}
+
+	# 要求叙拉古臣服
+	focus = {
+		id = MIN_focus_42
+		icon = GFX_attack_sir
+		cost = 5
+
+		x = 25
+		y = 9
+
+		prerequisite = {
+			focus = MIN_focus_50
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
+		completion_reward = {
+			SIR = {
+				country_event = {
+					id = min_expand.1
+					days = 3
+					random = 20
+					random_days = 1 
+				}
+			}
+		}
+	}
+
+	# 寻求乌萨斯旧贵族的支持
+	focus = {
+		id = MIN_focus_43
+		icon = GFX_focus_BUL_support_macedonian_organizations
+		cost = 3
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_50
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = {
+			focus = MIN_focus_50
+		}
+		completion_reward = {		
+			OAU = {
+				country_event = {
+					id = min_expand.2
+					days = 2
+					random = 20
+				}				
+			}
+			custom_effect_tooltip = MIN_focus_43_tt
+		}
+	}
+
+	# 进军罗马
+	focus = {
+		id = MIN_focus_44
+		icon = GFX_focus_generic_adriatic_sea_focus
+		cost = 7
+
+		x = 0
+		y = 2
+		relative_position_id = MIN_focus_42
+		prerequisite = {
+			focus = MIN_focus_42
+		}
+		
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = LAT
+		completion_reward = {
+			declare_war_on = {
+				target = LAT
+				type = annex_everything
+			}			
+		}
+	}
+
+	# 双头鹰再起
+	focus = {
+		id = MIN_focus_45
+		icon = GFX_focus_SOV_panslavic_nationalism
+		cost = 7
+
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_44
+
+		prerequisite = { focus = MIN_focus_44 }
+		prerequisite = { focus = MIN_focus_42 }
+		prerequisite = { focus = MIN_focus_28 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		will_lead_to_war_with = LAT
+		completion_reward = {
+
+		}
+	}
+
+	# 米诺斯陆军学院
+	focus = {
+		id = MIN_focus_46
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		cost = 6
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_29
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		prerequisite = { focus = MIN_focus_29 }
+		completion_reward = {
+			add_ideas = MIN_army_academy
+		}
+	}
+
+	# 不放弃每一个人
+	focus = {
+		id = MIN_focus_47
+		icon = GFX_goal_continuous_increase_nu
+		cost = 5
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_29
+
+		ai_will_do = {
+			factor = 1
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = MIN_focus_29 }
+		completion_reward = {
+			add_ideas = MIN_field_hospital
+		}
+	}
+
+	# 改善生产流程
+	focus = {
+		id = MIN_focus_48
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_33
+
+		ai_will_do = {
+			factor = 1	
+		}
+
+		prerequisite = {
+			focus = MIN_focus_33
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_naval_dock_production
+		}
+	}
+
+	# 树立文化自信
+	focus = {
+		id = MIN_focus_49
+		icon = GFX_focus_generic_monarchy_2
+		cost = 7
+	
+		x = 25
+		y = 1
+		prerequisite = { focus = MIN_focus_18 focus = MIN_focus_19 }
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+
+		completion_reward = {
+			add_ideas = MIN_cultural_confidence
+		}
+	}
+
+	# 帕拉斯的野心
+	focus = {
+		id = MIN_focus_50
+		icon = GFX_palas_ambition
+		cost = 7
+	
+		x = 24
+		y = 5
+
+		available = {
+			has_country_leader = {
+				name = "帕拉斯"
+				ruling_only = yes			 
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_country_leader_trait = overweeningly_ambitious
+		}
+	}
+
+	# 均衡发展
+	focus = {
+		id = MIN_focus_51
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 7
+	
+		x = 4
+		y = 2
+		relative_position_id = MIN_focus_33
+		
+		available = {
+			has_country_flag = our_team_had_finished_this_focus
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = MIN_focus_35
+		}
+		prerequisite = { focus = MIN_focus_33 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+		}
+	}
+
+	# 提前规划撤退方向
+	focus = {
+		id = MIN_focus_52
+		icon = GFX_goal_generic_wolf_pack
+		cost = 7
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_33
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_33 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_plan_the_retreat_direction
+		}
+	}
+	
+	# 近距离鱼雷发射战术
+	focus = {
+		id = MIN_focus_53
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_37
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_37 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_improve_torpedo_hit_rate
+		}
+	}
+
+	# 坦克反制方案
+	focus = {
+		id = MIN_focus_54
+		icon = GFX_focus_generic_combined_arms
+		cost = 6
+	
+		x = -5
+		y = 2
+		relative_position_id = MIN_focus_29
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_29 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_anti_tank
+		}
+	}
+
+	# 建设空军
+	focus = {
+		id = MIN_focus_55
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 35
+		y = 5
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+
+		completion_reward = {
+			air_experience = 20
+		}
+	}
+
+	
+	# 强劲的发动机
+	focus = {
+		id = MIN_focus_56
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_55 }
+		mutually_exclusive = {
+			focus = MIN_focus_57
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_good_engine
+		}
+	}
+
+	# 能用的发动机, 但仅此而已
+	focus = {
+		id = MIN_focus_57
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_55 }
+		mutually_exclusive = {
+			focus = MIN_focus_56
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_bad_engine
+		}
+	}
+
+	# 精准的瞄具
+	focus = {
+		id = MIN_focus_58
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_56
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_56 
+			focus = MIN_focus_57 
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_59
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_good_sight
+		}
+	}
+
+	# 要什么瞄具, 靠感觉就行
+	focus = {
+		id = MIN_focus_59
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_57
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_56 
+			focus = MIN_focus_57 
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_58
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_bad_sight
+		}
+	}
+
+	# 全金属结构机身
+	focus = {
+		id = MIN_focus_60
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_58
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_58 
+			focus = MIN_focus_59 
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_61
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_good_structure
+		}
+	}
+
+	# 木质结构机身
+	focus = {
+		id = MIN_focus_61
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_59
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_59 
+			focus = MIN_focus_60 
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_60
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_bad_structure
+		}
+	}
+
+	# 优质燃油
+	focus = {
+		id = MIN_focus_62
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_60
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_60 
+			focus = MIN_focus_61
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_63
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_good_fuel
+		}
+	}
+
+	# 劈啪作响的燃油
+	focus = {
+		id = MIN_focus_63
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_61
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = MIN_focus_60 
+			focus = MIN_focus_61
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_62
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_bad_fuel
+		}
+	}
+
+	# 精湛的米诺斯工艺
+	focus = {
+		id = MIN_focus_64
+		icon = GFX_focus_generic_aircraft_production
+		cost = 7
+	
+		x = -1
+		y = 1
+		relative_position_id = MIN_focus_62
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_56 }
+		prerequisite = { focus = MIN_focus_58 }
+		prerequisite = { focus = MIN_focus_60 }
+		prerequisite = { focus = MIN_focus_62 }
+		mutually_exclusive = {
+			focus = MIN_focus_65
+			focus = MIN_focus_66
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_good_air
+		}
+	}
+
+	# 中间路线
+	focus = {
+		id = MIN_focus_65
+		icon = GFX_goal_generic_air_fighter2
+		cost = 7
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_62
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_62 focus = MIN_focus_63 }
+		mutually_exclusive = {
+			focus = MIN_focus_64
+			focus = MIN_focus_66
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_intermediate_route
+		}
+	}
+
+	# 完美的飞行棺材
+	focus = {
+		id = MIN_focus_66
+		icon = GFX_goal_generic_attack_allies
+		cost = 7
+	
+		x = 1
+		y = 1
+		relative_position_id = MIN_focus_63
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_57 }
+		prerequisite = { focus = MIN_focus_59 }
+		prerequisite = { focus = MIN_focus_61 }
+		prerequisite = { focus = MIN_focus_63 }
+
+		mutually_exclusive = {
+			focus = MIN_focus_64
+			focus = MIN_focus_65
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			add_ideas = MIN_bad_air			
+		}
+	}
+
+	# 亡牌飞行员
+	focus = {
+		id = MIN_focus_67
+		icon = GFX_goal_generic_CAS
+		cost = 9
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_66
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_66 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_death_pilot
+		}		
+	}
+
+	# 加装夜视仪
+	focus = {
+		id = MIN_focus_68
+		icon = GFX_goal_continuous_air_production
+		cost = 9
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_64
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_64 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_night_vision_sight
+		}
+	}
+
+	# 飞行安全条例
+	focus = {
+		id = MIN_focus_69
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 5
+	
+		x = 0
+		y = 2
+		relative_position_id = MIN_focus_65
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_65
+			focus = MIN_focus_67 
+			focus = MIN_focus_68 
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_flight_safety_regulations
+		}
+	}
+
+	# 空军基础设施建设
+	focus = {
+		id = MIN_focus_70
+		icon = GFX_goal_continuous_non_factory_construct
+		cost = 7
+	
+		x = 4
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_55
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_air_airbase_build
+		}
+	}
+
+	# 空中之眼
+	focus = {
+		id = MIN_focus_71
+		icon = GFX_goal_generic_radar
+		cost = 6
+	
+		x = -4
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_55
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = MIN_start_industrial_reform_focus_71
+				bonus = 1.5
+				uses = 2
+				category = radar_tech
+			}
+		}
+	}
+
+	# 米诺斯空军学院
+	focus = {
+		id = MIN_focus_72
+		icon = GFX_goal_generic_build_airforce
+		cost = 6
+	
+		x = -6
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_55
+		}
+		search_filters = { FOCUS_FILTER_AIR_XP }
+
+		completion_reward = {
+			add_ideas = MIN_air_college
+		}
+	}
+
+	# 发展战斗机
+	focus = {
+		id = MIN_focus_73
+		icon = GFX_goal_generic_air_fighter
+		cost = 7
+	
+		x = 6
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_55
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_74
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				# name = MIN_start_industrial_reform_focus_71
+				bonus = 1.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	# 重型发展战斗机
+	focus = {
+		id = MIN_focus_74
+		icon = GFX_goal_generic_air_fighter
+		cost = 7
+	
+		x = 8
+		y = 1
+		relative_position_id = MIN_focus_55
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_55
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_73
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				# name = MIN_start_industrial_reform_focus_71
+				bonus = 1.5
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	# 租借指挥官
+	focus = {
+		id = MIN_focus_75
+		icon = GFX_lease_sikadi
+		cost = 4
+	
+		x = -3
+		y = 2
+		relative_position_id = MIN_focus_35
+
+		prerequisite = { focus = MIN_focus_35 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			effect_tooltip = {
+				recruit_character = MIN_sikadi
+				custom_effect_tooltip = available_chief_of_navy
+				custom_effect_tooltip = MIN_sikadi_tt
+				unlock_national_focus = MIN_focus_81
+			}
+
+			RHO = {
+				country_event = {
+					id = min_commander.1
+					days = 1
+					random = 12
+				}
+			}
+			custom_effect_tooltip = MIN_focus_75_tip	
+		}		
+	}
+
+	# 援助盟友
+	focus = {
+		id = MIN_focus_76
+		icon = GFX_focus_POL_beck_ribbentrop
+		cost = 7
+	
+		x = 1
+		y = 1
+		relative_position_id = MIN_focus_42
+
+		prerequisite = { focus = MIN_focus_42 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		available = {
+			SIR = {
+				is_puppet_of = MIN
+			}
+		}
+
+		completion_reward = {
+			SIR = {
+				add_ideas = MIN_to_sir_industrial_assistance
+			}
+			115 = {
+				if = {
+					limit = {
+						is_controlled_by = SIR	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			1013 = {
+				if = {
+					limit = {
+						is_controlled_by = SIR	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			156 = {
+				if = {
+					limit = {
+						is_controlled_by = SIR	
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# 适应严寒
+	focus = {
+		id = MIN_focus_77
+		icon = GFX_goal_generic_special_forces
+		cost = 4
+	
+		x = -3
+		y = 2
+		relative_position_id = MIN_focus_29
+
+		prerequisite = { focus = MIN_focus_29 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_adapt_to_severe_cold
+		}
+	}
+
+	# 适应炎热
+	focus = {
+		id = MIN_focus_78
+		icon = GFX_goal_generic_special_forces
+		cost = 4
+	
+		x = -1
+		y = 2
+		relative_position_id = MIN_focus_29
+
+		prerequisite = { focus = MIN_focus_29 }
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_adapt_to_heat
+		}
+	}
+
+	# 大空间经济
+	focus = {
+		id = MIN_focus_79
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 6
+	
+		x = 1
+		y = 2
+		relative_position_id = MIN_focus_1
+
+		prerequisite = { focus = MIN_focus_2 focus = MIN_focus_3 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = GER_grosraumwirtschaft
+		}
+	}
+
+	# 建设防线
+	focus = {
+		id = MIN_focus_80
+		icon = GFX_goal_generic_construct_military
+		cost = 6
+	
+		x = -1
+		y = 1
+		relative_position_id = MIN_focus_42
+
+		available = {
+			OR = {
+				114 = {
+					OR = {
+						is_controlled_by = MIN
+						AND = {
+							SIR = {
+								is_puppet_of = MIN								
+							}
+							114 = { is_controlled_by = SIR }
+						}						
+					}
+				}
+				117 = {
+					OR = {
+						is_controlled_by = MIN
+						AND = {
+							SIR = {
+								is_puppet_of = MIN
+							}
+							117 = { is_controlled_by = SIR }
+						}						
+					}
+				}
+				115 = {
+					OR = {
+						is_controlled_by = MIN
+						AND = {
+							SIR = {
+								is_puppet_of = MIN								
+							}
+							115 = { is_controlled_by = SIR }
+						}						
+					}
+				}
+			}
+		}
+
+		prerequisite = { focus = MIN_focus_42 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			114 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							is_controlled_by = SIR
+						}
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6891
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 902
+						instant_build = yes
+					}
+				}
+			}
+			117 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							is_controlled_by = SIR
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 9826
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11803
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6939
+						instant_build = yes
+					}
+				}				
+			}
+			115 = {
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							is_controlled_by = SIR
+						}
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 4159
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+	# 殖民地的管理问题
+	focus = {
+		id = MIN_focus_81
+		icon = GFX_focus_por_recover_latin_america
+		cost = 5
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_40
+
+		prerequisite = { focus = MIN_focus_40 }
+		search_filters = { FOCUS_FILTER_FRA_OCCUPATION_COST }
+
+		available = {
+			has_country_flag = rho_agree_lease_sikadi				
+			816 = {
+				is_controlled_by = ROOT
+			}
+			812 = {
+				is_controlled_by = ROOT
+			}
+			770 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		completion_reward = {
+			country_event = {
+				id = min_colony.2
+				days = 1
+				random = 12
+			}
+		}
+	}
+
+	# 授予斯卡蒂权利
+	focus = {
+		id = MIN_focus_82
+		icon = GFX_Governor_General_of_Africa
+		cost = 5
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_81
+
+		prerequisite = { focus = MIN_focus_81 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			MSZ = {
+				add_country_leader_trait = sikadi_governor
+			}
+		}
+	}
+
+	# 工业援助
+	focus = {
+		id = MIN_focus_83
+		icon = GFX_goal_generic_construct_military
+		cost = 6
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_82
+
+		prerequisite = { focus = MIN_focus_82 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			MSZ = {
+				add_ideas = MSZ_industrial_assistance
+			}
+		}
+	}
+
+	# 寻找矿脉
+	focus = {
+		id = MIN_focus_84
+		icon = GFX_goal_generic_construct_military
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_83
+
+		prerequisite = { focus = MIN_focus_83 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 10
+				state = 816
+			}
+			add_resource = {
+				type = steel
+				amount = 16
+				state = 812
+			}
+		}
+	}
+
+	# 最后的避难所
+	focus = {
+		id = MIN_focus_85
+		icon = GFX_goal_generic_construct_military
+		cost = 6
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_82
+
+		prerequisite = { focus = MIN_focus_82 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			MSZ = {
+				add_ideas = MSZ_refuge
+				816 = {
+					if = {
+						limit = {
+							OR = {
+								is_controlled_by = ROOT
+								is_controlled_by = MSZ
+							}
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 5
+							province = 8182
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 8182
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 12967
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 10845
+							instant_build = yes
+						}
+					}
+				}
+				770 = {
+					if = {
+						limit = {
+							OR = {
+								is_controlled_by = ROOT
+								is_controlled_by = MSZ
+							}
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 13209
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 12986
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 12908
+							instant_build = yes
+						}
+					}
+				}
+				812 = {
+					if = {
+						limit = {
+							OR = {
+								is_controlled_by = ROOT
+								is_controlled_by = MSZ
+							}
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 2180
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 5164
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 5
+							province = 2123
+							instant_build = yes
+						}
+					}
+				}
+			}			
+		}
+	}
+
+	# 吸引国外人才
+	focus = {
+		id = MIN_focus_86
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_10
+
+		prerequisite = { focus = MIN_focus_10 }
+		search_filters = { 
+			FOCUS_FILTER_RESEARCH 
+			FOCUS_FILTER_MANPOWER
+		}
+
+		completion_reward = {
+			add_ideas = MIN_attract_talents			
+		}
+	}
+
+	
+	# 成立合资公司
+	focus = {
+		id = MIN_focus_87
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_10
+
+		prerequisite = { focus = MIN_focus_10 }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 } # 添加地图外工厂	
+		}
+	}
+
+	# 教会改革
+	# focus = {
+	# 	id = MIN_focus_88
+	# 	icon = GFX_goal_tfv_generic_tech_sharing
+	# 	cost = 7
+	
+	# 	x = 30
+	# 	y = 6
+	# 	# relative_position_id = MIN_focus_10
+
+	# 	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	# 	completion_reward = {
+	# 		swap_ideas = {
+	# 			remove_idea = MIN_corrupt_church_2
+	# 			add_idea = MIN_corrupt_church_1
+	# 		}
+	# 	}
+	# }
+
+	# 加装天文望远镜
+	focus = {
+		id = MIN_focus_89
+		icon = GFX_goal_continuous_air_production
+		cost = 4
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_64
+
+		prerequisite = {
+			focus = MIN_focus_64
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_add_astronomical_telescope
+		}
+	}
+
+	# 蝗虫战术
+	focus = {
+		id = MIN_focus_90
+		icon = GFX_focus_SOV_flying_clubs
+		cost = 4
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_66
+
+		prerequisite = {
+			focus = MIN_focus_66
+		}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_locust_tactics
+		}
+	}
+
+	# 狼群战术
+	focus = {
+		id = MIN_focus_91
+		icon = GFX_goal_generic_wolf_pack
+		cost = 4
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_38
+
+		prerequisite = {
+			focus = MIN_focus_38
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = naval_doc_bonus				
+				cost_reduction = 0.5				
+				uses = 3
+				category = trade_interdiction_tree
+			}
+		}
+	}
+
+	# 发展近地支援机
+	focus = {
+		id = MIN_focus_92
+		icon = GFX_goal_generic_air_fighter
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_73
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_73
+			focus = MIN_focus_74
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_92
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	# 发展战术轰炸机
+	focus = {
+		id = MIN_focus_93
+		icon = GFX_goal_generic_air_fighter
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_74
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { 
+			focus = MIN_focus_73
+			focus = MIN_focus_74
+		}
+		mutually_exclusive = {
+			focus = MIN_focus_92
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	# 发展喷气式飞机
+	focus = {
+		id = MIN_focus_94
+		icon = GFX_goal_generic_air_fighter
+		cost = 7
+	
+		x = 1
+		y = 1
+		relative_position_id = MIN_focus_92
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = MIN_focus_92
+			focus = MIN_focus_93
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 2.0
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+}

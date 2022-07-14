@@ -1,0 +1,16 @@
+leader_traits = {
+	
+	# 深海猎人
+	deep_sea_hunter = {
+		ai_focus_naval_factor = 0.30
+		convoy_raiding_efficiency_factor = 0.25
+		naval_enemy_retreat_chance = -0.15
+		naval_speed_factor = 0.20
+	}
+
+	# 总督
+	sikadi_governor = {
+		stability_factor = 0.15
+		political_power_factor = 0.15
+	}
+}

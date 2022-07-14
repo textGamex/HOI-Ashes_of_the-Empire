@@ -1,0 +1,40 @@
+ideas = {
+	country = {
+
+		# 米诺斯工业援助
+		MSZ_industrial_assistance = {
+			allowed = {
+			}
+	
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			picture = SOV_third_five_year_plan_civilian
+	
+			modifier = {	
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.15
+			}
+		}
+
+		# 最后的避难所
+		MSZ_refuge = {
+			allowed = {
+			}
+				
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			picture = generic_fortify_the_borders
+	
+			modifier = {	
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.15
+			}
+		}
+	}
+}
