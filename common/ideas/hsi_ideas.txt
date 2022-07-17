@@ -1,0 +1,71 @@
+ideas = {
+	country = {
+
+		# 蜂巢思想
+		HSI_honeycomb_thought = {
+			allowed = {
+				original_tag = HSI
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			modifier = {
+				drift_defence_factor = 2.0
+				war_support_weekly = 1.0
+				stability_weekly = 1.0
+				stability_factor = 2.0
+				war_support_factor = 2.0
+				no_compliance_gain = 1
+				resistance_target = -2.0
+
+				experience_gain_army_unit_factor = 1.0
+				initiative_factor = 1.0
+				coordination_bonus = 0.3
+				
+				hidden_modifier = {
+					Army_fuel_consumption_factor = -1.0
+					air_fuel_consumption_factor = -1.0
+					navy_fuel_consumption_factor = -1.0
+					navy_max_range_factor = 2.5
+				}
+			}
+		}
+
+		# 生存至上
+		HSI_survival_first = {
+			allowed = {
+				original_tag = HSI
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			modifier = {
+				ai_focus_war_production_factor = 0.5
+				ai_focus_aggressive_factor = 0.5
+				hidden_modifier = {
+					ai_desired_divisions_factor = 50
+				}
+				training_time_army_factor = -0.80
+				# 登陆准备时间
+				invasion_preparation = -0.80	
+				naval_invasion_capacity = 300			
+			}
+		}
+
+		# 快速进化
+		HSI_rapid_evolution = {
+			allowed = {
+				original_tag = HSI
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 1.0
+				acclimatization_hot_climate_gain_factor = 1.0
+				land_night_attack = 0.25
+				heat_attrition_factor = -0.50
+				Winter_attrition_factor = -0.50
+				terrain_penalty_reduction = 0.70
+				carrier_traffic = 0.5
+			}
+		}
+	}
+}

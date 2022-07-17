@@ -1,0 +1,14 @@
+AOE_debug = {
+	icon = war
+	# icon = GFX_decision_category_SOV_civil_war 
+	# picture = GFX_decision_cat_picture_soviet_civil_war    
+	priority = 3000
+
+	allowed = {
+		is_debug = yes
+	}	
+
+	visible = {
+		is_debug = yes
+	}
+}

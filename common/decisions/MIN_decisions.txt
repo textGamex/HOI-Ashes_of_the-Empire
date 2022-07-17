@@ -114,55 +114,6 @@ MIN_trade_relationship = {
 	}
 }
 
-_debug = {
-	build_MSZ = {
-
-		allowed = {
-			original_tag = MIN
-		}	
-
-		available = {
-			always = yes
-		}
-		
-		cost = 1
-		complete_effect = {
-			MSZ = {
-				transfer_state = 816
-				transfer_state = 812
-				transfer_state = 770
-				add_state_core = 816
-				add_state_core = 812
-				add_state_core = 770
-
-			}	
-			MIN = {
-				puppet = MSZ
-			}
-		}
-	}
-
-	t = {
-
-		allowed = {
-			original_tag = MIN
-		}	
-
-		available = {
-			always = yes
-		}
-		
-		cost = 1
-		complete_effect = {
-			hidden_effect = {
-				recruit_character = MIN_sikadi
-			}
-			custom_effect_tooltip = rhodes_doctor_will_come_back_tt
-		}		
-		
-	}
-}
-
 public_exclusion_system = {
 		
 	small_propaganda_work = {

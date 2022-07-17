@@ -1,0 +1,20 @@
+characters = {
+	AEG_aegir_geleidiya = {
+		name = "歌蕾蒂娅"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AEG/AEG_geleidiya.dds"
+			}
+			army = {
+				large = "gfx/leaders/AEG/AEG_geleidiya.dds"
+				small = ""
+			}
+		}
+		country_leader = {
+			ideology = republic
+			traits = {  }
+			desc = ""
+			expire = "2950.1.1.1"
+		}
+	}
+}

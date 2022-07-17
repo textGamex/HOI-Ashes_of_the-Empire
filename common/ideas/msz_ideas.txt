@@ -36,5 +36,21 @@ ideas = {
 				industrial_capacity_factory = 0.15
 			}
 		}
+
+		MSZ_didi_country = {
+			allowed = {
+			}
+				
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			picture = hol_de_vaarplicht
+	
+			modifier = {					
+				trade_opinion_factor = -0.5
+				opinion_gain_monthly_factor  = -0.5
+			}
+		}
 	}
 }

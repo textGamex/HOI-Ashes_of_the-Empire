@@ -1,0 +1,55 @@
+sub_units = {
+	haisi = {
+		abbreviation = "HSI"
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 600
+		ai_priority = 200
+		active = yes
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		# 战斗宽度
+		combat_width = 8
+		
+		#最大强度
+		max_strength = 100
+		# 组织度
+		max_organisation = 100
+		# 士气???
+		default_morale = 1.0
+		manpower = 500000
+
+		#Misc Abilities
+		# 训练时间
+		training_time = 30
+		# 
+		suppression = 1.5
+		weight = 0.5
+		
+		supply_consumption = 0.03
+	
+		need = {
+			infantry_equipment = 100
+		}
+
+		attack = 200
+		soft_attack = 20 
+		hard_attack = 3
+		breakthrough = 2.0
+
+		defense = 1.0
+	}
+}

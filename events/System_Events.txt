@@ -1,0 +1,23 @@
+add_namespace = sys_HSI_add_troops
+
+country_event = {
+	id = sys_HSI_add_troops.1
+
+	title = sys_HSI_add_troops.1.t
+	desc = sys_HSI_add_troops.1.desc
+	# picture = GFX_event_gal_gameevents_1
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = sys_HSI_add_troops.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+		load_oob = "HSI_1935"	
+		load_oob = "HSI_1936_naval_mtg"	
+	}
+}

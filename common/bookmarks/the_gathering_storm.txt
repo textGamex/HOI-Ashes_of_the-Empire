@@ -155,6 +155,16 @@ bookmarks = {
 				MIN_focus_32
 			}	
 		}
+
+		"AEG" = {
+			minor = yes
+			history = "AGE_INTRODUCE_DESC"
+			ideology = republic
+			ideas = {				
+			}
+			focuses = {
+			}	
+		}
 		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !

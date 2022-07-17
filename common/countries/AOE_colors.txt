@@ -2,3 +2,8 @@ MSZ = {
 	color = rgb { 84 132 181 }
 	color_ui = rgb { 66 120 175 }
 }
+
+HSI = {
+	color = rgb { 0 0 128 }
+	color_ui = rgb { 12 73 136 }
+}

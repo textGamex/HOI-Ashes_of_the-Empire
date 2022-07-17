@@ -1,0 +1,106 @@
+ideas = {
+	country = {
+
+		#  深海教会的渗透
+		AEG_penetration_of_deep_sea_church = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				max_planning_factor = -0.8
+				planning_speed = -0.8
+				stability_factor = -0.15
+				war_support_factor  = -0.05
+			}
+		}
+
+		#  孤岛危机
+		AEG_crysis = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				stability_weekly = -0.01
+				war_support_weekly = -0.01
+				political_power_factor = -0.50
+			}
+		}
+
+		# 失败主义
+		AEG_defeatism = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				stability_factor = -0.60
+				war_support_factor  = -0.60
+				conscription_factor = -0.60
+				Army_org_factor = -0.15
+				drift_defence_factor = -0.30
+			}
+		}
+
+		# 残缺的工业体系
+		AEG_incomplete_industrial_system = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.80
+				industrial_capacity_factory = -0.30
+				global_building_slots_factor = -0.30
+				industrial_capacity_factory = -0.50
+				industrial_capacity_dockyard = -0.50
+				# 生产效率上限。	
+				production_factory_max_efficiency_factor = -0.50
+				# 基础生产效率
+				production_factory_start_efficiency_factor = -0.20
+				production_speed_buildings_factor = -0.70
+				line_change_production_efficiency_factor = -0.50
+			}
+		}
+
+		# 毫无经验的飞机设计师
+		AEG_inexperienced_aircraft_designer = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+			research_bonus = {
+				air_equipment = -0.80
+			}
+		}
+	}
+}

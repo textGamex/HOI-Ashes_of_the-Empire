@@ -1,0 +1,3 @@
+MSZ = "countries/MSZ.txt"
+HSI = "countries/HSI.txt"
+AEG = "countries/Aegir.txt"

@@ -1,0 +1,587 @@
+﻿
+units= {
+
+	##### NAVAL UNITS #####
+	##### PACIFIC FLEET #####
+	### BATTLE FLEET ###
+	### Split between San Pedro (Los Angeles) and San Diego ###
+	fleet = {
+		name = "Liao Dong Jiandui"			
+		naval_base = 2197 # San Diego			
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Peng" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = YAN version_name = "Yan Huang Class" } } }				
+		}	
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Kun" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = YAN version_name = "Yan Huang Class" } } }				
+		}
+		task_force = {					
+			name = "5th Submarine Squadron"				
+			location = 2197 # Manilla
+			# 14th Destroyer Division				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }					
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long E" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long F" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long G" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long H" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+            ship = { name = "  Bai Long I" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long J" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long K" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long L" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }			
+		}
+		
+	}
+	fleet = {
+		name = "Hai Shen Wai Jiandui"			
+		naval_base = 2197 # San Diego
+		task_force = {					
+			name = "Carrier Division, Battle Force"		
+			location = 2197 # San Diego
+			ship = { name = "Feng" definition = carrier start_experience_factor = 0.5 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = YAN version_name = "Feng Huang Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "YAN" amount = 36 } # historical: 36
+					cv_nav_bomber_equipment_1 =  { owner = "YAN" amount = 24 } # historical: 24
+				}
+			}
+			ship = { name = "  Song" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+            ship = { name = "  Min A" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui A" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }
+            ship = { name = "  Min" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }			
+			ship = { name = "  Chun" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Tang" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }					
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+			ship = { name = "  Bai Long M" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long N" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long O" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long P" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+			ship = { name = "  Bai Long Q" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long R" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long S" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long T" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+		}
+	}
+	fleet = {
+	    name = "Ji Dong Jiandui"			
+		naval_base = 2197 # San Diego
+		task_force = {					
+			name = "Carrier Division, Battle Force"		
+			location = 2197 # San Diego
+			ship = { name = "Bai Lu" definition = carrier start_experience_factor = 0.5 equipment = { ship_hull_carrier_1 = { amount = 1 owner = YAN version_name = "Kong Que Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "YAN" amount = 36 } # historical: 36
+					cv_nav_bomber_equipment_1 =  { owner = "YAN" amount = 24 } # historical: 24
+				}
+			}
+			ship = { name = "  Hang" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+            ship = { name = "  Min C" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui C" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Qing LongC" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Chun C" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }	
+			ship = { name = "  Chun D" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }			
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Chun" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Zhou" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }					
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+			ship = { name = "  Bai Long U" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long V" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long W" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long X" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+		}		
+		task_force = {					
+			name = "Cruisers, Battle Force"
+			location = 2197 # Los Angeles
+			# Cruiser Division 2 #			
+			ship = { name = "Wei Long" definition = carrier start_experience_factor = 0.5 equipment = { ship_hull_carrier_1 = { amount = 1 owner = YAN version_name = "Liao Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "YAN" amount = 36 } # historical: 36
+					cv_nav_bomber_equipment_1 =  { owner = "YAN" amount = 24 } # historical: 24
+				}
+			}
+			ship = { name = "  Lu" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Milwaukee" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+            ship = { name = "  Lu E" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Lu F" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Lu G" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Lu H" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Lu I" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }											
+			ship = { name = "  Qing Long A" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Chun A" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }	
+			ship = { name = "  Min B" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui B" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Qing Long B" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }					
+			ship = { name = "  Bai Long BD" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+            ship = { name = "  Bai Long BE" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BF" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BG" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BH" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+			ship = { name = "  Lu J" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+            ship = { name = "  Lu K" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+		}	
+	}
+	fleet = {
+		name = "Qing Dao Jiandui"			
+		naval_base = 2197 # San Diego
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Han" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Qing Dao Class" } } }				
+		}	
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Ming" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = { amount = 1 owner = YAN version_name = "Hai Jiao Class" } } }				
+		}
+		task_force = {					
+			name = "Cruisers, Battle Force"
+			location = 2197 # Los Angeles
+			ship = { name = "  Min" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Qing Long" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }								
+			ship = { name = "  Qing Long" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Chun" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }	
+			ship = { name = "  Min" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Shen Gui" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Qing Long" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Min Class" } } }				
+			ship = { name = "  Chun" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }	
+			ship = { name = "  Chun" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }				
+		}					
+		task_force = {					
+			name = "Cruiser Division 3"				
+			base = 2197
+			location = 2197 # San Diego
+			ship = { name = "  Trenton" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Concord" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			# Minlayer Division #		
+			
+			ship = { name = "  Min" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Chun" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Min" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Chun" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = YAN version_name = "Yue Class" } } }	
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+            ship = { name = "  Bai Long Y" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }
+            ship = { name = "  Bai Long Z" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BA" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BB" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bai Long BC" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }			
+		}
+	}
+	##### ASIATIC FLEET #####
+	fleet = {
+		name = "Song Hu Jiandui"			
+		naval_base = 2197 # Manilla
+		task_force = {										
+			name = "Carrier Division, Battle Force"		
+			location = 2197 # San Diego
+			ship = { name = "Bai He" definition = carrier start_experience_factor = 0.5 equipment = { ship_hull_carrier_1 = { amount = 1 owner = YAN version_name = "Kong Que Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "YAN" amount = 36 } # historical: 36
+					cv_nav_bomber_equipment_1 =  { owner = "YAN" amount = 24 } # historical: 24
+				}
+			}
+			ship = { name = "  Jin" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Chun" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Yuan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }					
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+		}
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Yuan" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = { amount = 1 owner = YAN version_name = "Hai Jiao Class" } } }				
+		}
+		task_force = {	
+			name = "Cruiser Division 4"				
+			location = 2197 # Manilla
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Augusta" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Zhe Class" } } }				
+			ship = { name = "  Marblehead" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+			### Destroyer Squadron 5 ###				
+			ship = { name = "  Paul Jones" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			# 13th Destroyer Division				
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+		}
+	}
+	fleet = {
+		name = "Guang Dong Jiandui"			
+		naval_base = 2197 # Manilla
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Fei Long" definition = battle_cruiser start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Fei Long Class" } } }				
+		}	
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Yan" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Qing Dao Class" } } }				
+		}
+		task_force = {					
+			name = "5th Submarine Squadron"				
+			location = 2197 # Manilla
+			# 14th Destroyer Division				
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Edsall" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Parrott" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Bulmer" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Stewart" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			# 15th Destroyer Division				
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Pope" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Peary" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Pillsbury" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ford" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+		}					
+		task_force = {					
+			name = "5th Submarine Squadron"				
+			location = 2197 # Manilla
+			# 10th Submarine Division				
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  S-48" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Qian Long Class" } } }
+			ship = { name = "  S-49" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Qian Long Class" } } }
+			ship = { name = "  S-50" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Qian Long Class" } } }
+			ship = { name = "  S-42" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Qian Long Class" } } }
+			ship = { name = "  S-43" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Qian Long Class" } } }
+			ship = { name = "  S-44" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Jiao Long Class" } } }
+			ship = { name = "  S-45" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Jiao Long Class" } } }
+			ship = { name = "  S-46" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Jiao Long Class" } } }
+			ship = { name = "  S-47" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = YAN version_name = "Jiao Long Class" } } }
+			ship = { name = "  S-36" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+			ship = { name = "  S-37" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+			ship = { name = "  S-38" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+			ship = { name = "  S-39" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+			ship = { name = "  S-40" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+			ship = { name = "  S-41" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YAN version_name = "Shen Long Class" } } }
+		}					
+	}
+	fleet = {
+		name = "Tai Wan Jiandui"			
+		naval_base = 2197 # Manilla
+		task_force = {										
+			name = "Carrier Division, Battle Force"		
+			location = 2197 # San Diego
+			ship = { name = "Bai Lu" definition = carrier start_experience_factor = 0.5 equipment = { ship_hull_carrier_1 = { amount = 1 owner = YAN version_name = "Kong Que Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "YAN" amount = 36 } # historical: 36
+					cv_nav_bomber_equipment_1 =  { owner = "YAN" amount = 24 } # historical: 24
+				}
+			}
+			ship = { name = "  Jin" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Chun" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }	
+			ship = { name = "  Yuan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Shen Gui" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }				
+			ship = { name = "  Qing Long" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }					
+			ship = { name = "  Wan" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }				
+			ship = { name = "  Aroostook" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Wan Class" } } }
+		}
+		task_force = {				
+			name = "Battleships, Battle Force"
+			location = 2197 # San Diego
+			### Battleship Division 1 ###			
+			ship = { name = "Ning Yuan" definition = battle_cruiser start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Fei Long Class" } } }
+			ship = { name = "An Yang" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Qing Dao Class" } } }
+			ship = { name = "An Yuan" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_2 = { amount = 1 owner = YAN version_name = "Qing Dao Class" } } }				
+		}
+		task_force = {	
+			name = "Cruiser Division 4"				
+			location = 2197 # Manilla
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			ship = { name = "  Augusta" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Zhe Class" } } }				
+			ship = { name = "  Marblehead" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YAN version_name = "Lu Class" } } }
+			### Destroyer Squadron 5 ###				
+			ship = { name = "  Paul Jones" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "Bai Long Class" } } }		
+			# 13th Destroyer Division				
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Xia" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Qiu" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ping Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+			ship = { name = "  Ping An" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }
+			ship = { name = "  Wei Long" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }
+			ship = { name = "  Wei Yuan" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YAN version_name = "MaZu Class" } } }		
+		}
+	}
+} 
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+
+	### Under Construction Notes ###
+	# CA: Quincy (Min class, Comm. 9-Jun, 1936)
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_super_heavy_1
+			creator = "YAN"
+			version_name = "Imperial Will Class"
+		}
+		name = "Imperial Will" 
+		requested_factories = 3
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_2
+			creator = "YAN"
+			version_name = "Qing Dao Class"
+		}
+		requested_factories = 1
+		progress = 0.70
+		amount = 1
+	}
+	# CA: Yue Gang (Yue Gang class
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_2
+			creator = "YAN"
+			version_name = "Qing Dao Class"
+		} 
+		requested_factories = 2
+		progress = 0.50
+		amount = 1
+	}
+	##2 Yorktowns (Yorktown, Enterprise)
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_carrier_1
+			creator = "YAN"
+			version_name = "Liao Class"
+		}
+		requested_factories = 2
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_carrier_1
+			creator = "YAN"
+			version_name = "Liao Class"
+		}
+		requested_factories = 2
+		progress = 0.40
+		amount = 1
+	}
+
+	# DD: Porter (x14) ("  Porter" "  Phelps" "  Clark" "  Moffett")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Porter" 
+		requested_factories = 1
+		progress = 0.20
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Phelps" 
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Clark" 
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Moffett" 
+		requested_factories = 1
+		progress = 0.20
+		amount = 1
+	}
+	# DD: Mahan class (x9) ("  Mahan" "  Cummings" "  Fl er" "  Case" "  Conyngham" "  Cassin" "  Shaw" "  Cushing" "  Perkins")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Mahan" 
+		requested_factories = 1
+		progress = 0.30
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Cummings" 
+		requested_factories = 1
+		progress = 0.10
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Fl er" 
+		requested_factories = 1
+		progress = 0.20
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Case" 
+		requested_factories = 1
+		progress = 0.30
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Conyngham" 
+		requested_factories = 1
+		progress = 0.10
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Cassin" 
+		requested_factories = 1
+		progress = 0.40
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Shaw" 
+		requested_factories = 1
+		progress = 0.30
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Cushing" 
+		requested_factories = 1
+		progress = 0.40
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YAN"
+			version_name = "MaZu Class"
+		}
+		name = "  Perkins" 
+		requested_factories = 1
+		progress = 0.30
+		amount = 1
+	}
+	# SS: Shark class (x1) ("  Tarpon")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "YAN"
+			version_name = "Jiao Long Class"
+		}
+		name = "  Tarpon" 
+		requested_factories = 1
+		progress = 0.70
+		amount = 1
+	}
+}
+
+#####################

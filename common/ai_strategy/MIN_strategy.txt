@@ -29,12 +29,12 @@ MIN_enemy_YUG = {
 	}
 	ai_strategy = {
 		type = antagonize
-		id = "YUG"
+		id = YUG
 		value = 100
 	}
 	ai_strategy = {
 		type = prepare_for_war
-		id = "YUG"
+		id = YUG
 		value = 100
 	}		
 }
@@ -56,12 +56,12 @@ MIN_enemy_LAT = {
 	}
 	ai_strategy = {
 		type = antagonize
-		id = "LAT"
+		id = LAT
 		value = 350
 	}
 	ai_strategy = {
 		type = prepare_for_war
-		id = "LAT"
+		id = LAT
 		value = 350
 	}
 }

@@ -1,0 +1,20 @@
+characters = {
+	HSI_leader = {
+		name = "首言者"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/HSI/HSI_leader.dds"
+			}
+			army = {
+				large = "gfx/leaders/HSI/HSI_leader.dds"
+				small = ""
+			}
+		}
+		country_leader = {
+			ideology = integration_of_politics_and_religion
+			traits = {  }
+			desc = ""
+			expire = "2950.1.1.1"
+		}
+	}
+}

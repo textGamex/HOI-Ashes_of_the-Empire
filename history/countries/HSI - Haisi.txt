@@ -1,18 +1,18 @@
-capital = 816
+capital = 284
 
-oob = "MSZ_1936"
+oob = "HSI_1935"
 if = {
 	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "MSZ_1936_naval_mtg"
+		set_naval_oob = "HSI_1936_naval_mtg"
 	else = {
-		set_naval_oob = "MSZ_1936_naval_legacy"
+		set_naval_oob = "HSI_1936_naval_legacy"
 	}
 }
 
 set_stability = 0.5
 set_war_support = 0.5
 set_research_slots = 3
-set_convoys = 50
+set_convoys = 2000
 starting_train_buffer = 2
 
 set_technology = {
@@ -207,12 +207,14 @@ set_politics = {
 }
 
 set_popularities = {
-	religiosity = 88
-	feudal_aristocratic = 12
+	religiosity = 100
+	# feudal_aristocratic = 12
 }
 
-recruit_character = MSZ_sikadi
+recruit_character = HSI_leader
 
 add_ideas = {
-	MSZ_didi_country
+	HSI_honeycomb_thought
+	HSI_survival_first
+	HSI_rapid_evolution
 }
