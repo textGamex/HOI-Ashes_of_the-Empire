@@ -312,4 +312,6 @@ add_ideas = {
 	AEG_defeatism
 	AEG_incomplete_industrial_system
 	AEG_inexperienced_aircraft_designer
+	AEG_deserter
+	AEG_troops_unfit_for_land_operations
 }

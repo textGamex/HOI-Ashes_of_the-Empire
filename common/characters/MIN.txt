@@ -1,6 +1,6 @@
 characters = {
 	MIN_high_priests = {
-		name = "帕拉斯"
+		name = MIN_high_priests
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/MIN/High Priests.dds"
@@ -20,11 +20,11 @@ characters = {
 
 		corps_commander = {
 			traits={ hill_fighter naval_invader }
-			skill = 6
-			attack_skill=8
-			defense_skill=6
-			planning_skill=6
-			logistics_skill=8
+			skill = 5
+			attack_skill=5
+			defense_skill=5
+			planning_skill=4
+			logistics_skill=5
 			legacy_id=-1
 		}
 	}
@@ -72,6 +72,135 @@ characters = {
 					num_of_naval_factories > 2
 					factor = 3
 				}
+			}
+		}
+	}
+
+	MIN_ceobe = {
+		name = MIN_ceobe
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MIN/MIN_ceobe.dds"
+			}
+			army = {
+				large = "gfx/leaders/MIN/MIN_ceobe.dds"
+				small = "gfx/interface/ideas/MIN_ceobe_advisor.dds"
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			cost = 150
+			name = MIN_ceobe
+
+			allowed = {
+				original_tag = MIN
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				has_completed_focus = MIN_focus_100	
+			}
+
+			traits = {	
+				army_commando_3							
+			}
+
+			ai_will_do = {
+				base = 7				
+			}
+		}
+
+		corps_commander = {
+			traits={ hill_fighter commando trait_mountaineer }
+			skill = 4
+			attack_skill=5
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	MIN_vulcan = {
+		name = MIN_vulcan
+		portraits = {
+			# civilian = {
+			# 	large = "gfx/leaders/MIN/MIN_ceobe.dds"
+			# }
+			army = {
+				# large = "gfx/leaders/MIN/MIN_ceobe.dds"
+				small = "gfx/interface/ideas/MIN_vulcan_advisor.dds"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			name = MIN_vulcan
+
+			allowed = {
+				original_tag = MIN
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				has_completed_focus = MIN_focus_1
+			}
+
+			traits = {	
+				captain_of_industry
+				fortification_engineer
+				quartermaster_general				
+			}
+
+			ai_will_do = {
+				base = 10				
+			}
+		}
+	}
+
+	MIN_conviction = {
+		name = MIN_conviction
+		portraits = {
+			# civilian = {
+			# 	large = "gfx/leaders/MIN/MIN_ceobe.dds"
+			# }
+			army = {
+				# large = "gfx/leaders/MIN/MIN_ceobe.dds"
+				small = "gfx/interface/ideas/MIN_conviction_advisor.dds"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			name = MIN_conviction
+
+			allowed = {
+				original_tag = MIN
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				has_completed_focus = MIN_focus_50
+			}
+
+			traits = {
+				MIN_conviction_trait			
+			}
+
+			ai_will_do = {
+				base = 10				
 			}
 		}
 	}

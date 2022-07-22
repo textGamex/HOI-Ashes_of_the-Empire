@@ -1,0 +1,9 @@
+incite_resistance = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource
+
+	resistance_growth = 0.30
+	resistance_target = 0.50
+	compliance_growth = -0.20
+	compliance_gain = -0.25
+}

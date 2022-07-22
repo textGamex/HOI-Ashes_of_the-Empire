@@ -1,0 +1,12 @@
+technology_sharing_group = {
+
+	id = MIN_allied_research
+	name = MIN_allied_research_name
+	desc = MIN_allied_research_desc
+	picture = GFX_technology_sharing_default
+	research_sharing_per_country_bonus = 0.70
+
+	available = {
+		always = yes
+	}
+}

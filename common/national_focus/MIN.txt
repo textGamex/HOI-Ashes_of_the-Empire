@@ -36,6 +36,9 @@ focus_tree = {
 				add_idea = MIN_Backward_industry_idea2
 			}
 			add_political_power = 50
+			custom_effect_tooltip = available_political_advisor
+			custom_effect_tooltip = MIN_vulcan
+			# show_unit_leaders_tooltip = MIN_vulcan
 		}
 	}
 
@@ -729,7 +732,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		cost = 7
 	
-		x = 30
+		x = 35
 		y = 0
 		mutually_exclusive = { focus = MIN_focus_18 }
 
@@ -989,7 +992,7 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		cost = 7
 	
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = MIN_focus_26
 
@@ -1044,8 +1047,12 @@ focus_tree = {
 		icon = GFX_focus_chi_army_reform
 		cost = 7
 	
-		x = 43
-		y = 0
+		x = -10
+		y = 1
+		relative_position_id = MIN_focus_99
+
+		prerequisite = { focus = MIN_focus_99 }
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -1064,19 +1071,21 @@ focus_tree = {
 	
 		x = 0
 		y = 1
-		relative_position_id = MIN_focus_29
+		relative_position_id = MIN_focus_100
 
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		prerequisite = { focus = MIN_focus_29 }
+		prerequisite = { focus = MIN_focus_100 }
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 3.0
 				uses = 1
 				category = mountaineers_tech
 			}
+			custom_effect_tooltip = MIN_mountain_training_effect	
+			hidden_effect = { set_technology = { mountain_warfare = 1 } }
 		}
 	}
 
@@ -1101,7 +1110,7 @@ focus_tree = {
 	# 1984远景计划
 	focus = {
 		id = MIN_focus_32
-		icon = GFX_focus_usa_guarantee_the_american_dream
+		icon = GFX_focus_spa_the_spanish_miracle
 		cost = 7
 	
 		x = 7
@@ -1122,15 +1131,34 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 4
 	
-		x = 53
-		y = 0
+		x = 18
+		y = 1
+
+		relative_position_id = MIN_focus_99
+
+		prerequisite = { focus = MIN_focus_99 }
 		ai_will_do = {
 			factor = 1
 		}
-		search_filters = { FOCUS_FILTER_NAVY_XP }
+		search_filters = { 
+			FOCUS_FILTER_NAVY_XP
+			FOCUS_FILTER_INDUSTRY 
+		}
 
 		completion_reward = {
-			navy_experience = 20
+			navy_experience = 30
+
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					is_core_of = ROOT					
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+				}
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 
@@ -1141,7 +1169,7 @@ focus_tree = {
 		cost = 6
 	
 		x = -2
-		y = -1
+		y = 0
 		relative_position_id = MIN_focus_35
 
 		ai_will_do = {
@@ -1163,7 +1191,7 @@ focus_tree = {
 		cost = 6
 	
 		x = -4
-		y = 2
+		y = 1
 		relative_position_id = MIN_focus_33
 		
 		ai_will_do = {
@@ -1241,11 +1269,11 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_submarine
 		cost = 7
 	
-		x = 4
+		x = 0
 		y = 1
-		relative_position_id = MIN_focus_35
+		relative_position_id = MIN_focus_36
 		
-		prerequisite = { focus = MIN_focus_35 }
+		prerequisite = { focus = MIN_focus_36 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1259,8 +1287,11 @@ focus_tree = {
 		icon = GFX_focus_generic_africa_naval
 		cost = 7
 
-		x = 15
-		y = 7
+		x = 6
+		y = 1
+		relative_position_id = MIN_focus_50
+
+		prerequisite = { focus = MIN_focus_50 }
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -1351,8 +1382,9 @@ focus_tree = {
 		icon = GFX_attack_sir
 		cost = 5
 
-		x = 25
-		y = 9
+		x = 3
+		y = 1
+		relative_position_id = MIN_focus_50
 
 		prerequisite = {
 			focus = MIN_focus_50
@@ -1423,20 +1455,77 @@ focus_tree = {
 	# 双头鹰再起
 	focus = {
 		id = MIN_focus_45
-		icon = GFX_focus_SOV_panslavic_nationalism
+		icon = GFX_focus_GRE_reviving_the_double_headed_eagle
 		cost = 7
 
 		x = 0
 		y = 1
 		relative_position_id = MIN_focus_44
 
+		available = {
+			SIR = {
+				controls_state = 114
+				controls_state = 1013
+				controls_state = 115
+				controls_state = 156
+				controls_state = 117	
+				is_puppet_of = MIN
+			}
+			OR = {
+				controls_state = 2
+				AND = {
+					LAT = {
+						controls_state = 2
+						is_puppet_of = MIN
+					}
+				}
+			}
+		}
+
 		prerequisite = { focus = MIN_focus_44 }
 		prerequisite = { focus = MIN_focus_42 }
 		prerequisite = { focus = MIN_focus_28 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		will_lead_to_war_with = LAT
-		completion_reward = {
 
+		completion_reward = {
+			SIR = {
+				every_core_state = {
+					add_core_of = MIN
+					remove_core_of = SIR
+				}
+				every_unit_leader = {
+					set_nationality = MIN
+				}
+			}
+			LAT = {
+				every_core_state = {							
+					add_core_of = MIN
+					remove_core_of = LAT					
+				}
+			}
+			MIN = {
+				annex_country = {
+					target = SIR
+					transfer_troops = yes
+				}
+				if = {
+					limit = {
+						LAT = {
+							exist = yes
+							is_puppet_of = MIN
+						}
+					}
+					annex_country = {
+						target = LAT
+						transfer_troops = yes
+					}	
+					every_unit_leader = {
+						set_nationality = MIN
+					}								
+				}
+				set_capital = { state = 2 }
+				set_cosmetic_tag = MIN_Roman_Empire
+			}
 		}
 	}
 
@@ -1487,7 +1576,7 @@ focus_tree = {
 		cost = 7
 	
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = MIN_focus_33
 
 		ai_will_do = {
@@ -1495,7 +1584,8 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = MIN_focus_33
+			focus = MIN_focus_35
+			focus = MIN_focus_51
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1510,8 +1600,10 @@ focus_tree = {
 		icon = GFX_focus_generic_monarchy_2
 		cost = 7
 	
-		x = 25
+		x = 8
 		y = 1
+		relative_position_id = MIN_focus_18
+
 		prerequisite = { focus = MIN_focus_18 focus = MIN_focus_19 }
 		ai_will_do = {
 			factor = 1
@@ -1529,8 +1621,10 @@ focus_tree = {
 		icon = GFX_palas_ambition
 		cost = 7
 	
-		x = 24
-		y = 5
+		x = 4
+		y = 1
+		relative_position_id = MIN_focus_18
+		prerequisite = { focus = MIN_focus_18 }
 
 		available = {
 			has_country_leader = {
@@ -1552,11 +1646,11 @@ focus_tree = {
 	# 均衡发展
 	focus = {
 		id = MIN_focus_51
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_focus_generic_navy_battleship2
 		cost = 7
 	
 		x = 4
-		y = 2
+		y = 1
 		relative_position_id = MIN_focus_33
 		
 		available = {
@@ -1584,14 +1678,17 @@ focus_tree = {
 		cost = 7
 	
 		x = 2
-		y = 1
+		y = 2
 		relative_position_id = MIN_focus_33
 		
 		ai_will_do = {
 			factor = 1
 		}
 
-		prerequisite = { focus = MIN_focus_33 }
+		prerequisite = { 
+			focus = MIN_focus_35
+			focus = MIN_focus_51
+		}
 		# search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1627,8 +1724,8 @@ focus_tree = {
 		icon = GFX_focus_generic_combined_arms
 		cost = 6
 	
-		x = -5
-		y = 2
+		x = -4
+		y = 1
 		relative_position_id = MIN_focus_29
 		
 		ai_will_do = {
@@ -1649,9 +1746,12 @@ focus_tree = {
 		icon = GFX_goal_continuous_air_production
 		cost = 4
 	
-		x = 35
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_99
 		
+		prerequisite = { focus = MIN_focus_99 }
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -1659,7 +1759,19 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_AIR_XP }
 
 		completion_reward = {
-			air_experience = 20
+			air_experience = 30
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						air_base > 9
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -2093,7 +2205,7 @@ focus_tree = {
 	# 米诺斯空军学院
 	focus = {
 		id = MIN_focus_72
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_focus_generic_military_academy
 		cost = 6
 	
 		x = -6
@@ -2184,8 +2296,8 @@ focus_tree = {
 		icon = GFX_lease_sikadi
 		cost = 4
 	
-		x = -3
-		y = 2
+		x = -1
+		y = 3
 		relative_position_id = MIN_focus_35
 
 		prerequisite = { focus = MIN_focus_35 }
@@ -2278,11 +2390,11 @@ focus_tree = {
 		icon = GFX_goal_generic_special_forces
 		cost = 4
 	
-		x = -3
-		y = 2
-		relative_position_id = MIN_focus_29
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_100
 
-		prerequisite = { focus = MIN_focus_29 }
+		prerequisite = { focus = MIN_focus_100 }
 		# search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -2296,11 +2408,11 @@ focus_tree = {
 		icon = GFX_goal_generic_special_forces
 		cost = 4
 	
-		x = -1
-		y = 2
-		relative_position_id = MIN_focus_29
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_100
 
-		prerequisite = { focus = MIN_focus_29 }
+		prerequisite = { focus = MIN_focus_100 }
 		# search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -2505,7 +2617,7 @@ focus_tree = {
 	# 工业援助
 	focus = {
 		id = MIN_focus_83
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_generic_africa_production
 		cost = 6
 	
 		x = 2
@@ -2525,7 +2637,7 @@ focus_tree = {
 	# 寻找矿脉
 	focus = {
 		id = MIN_focus_84
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_goal_generic_oil_refinery
 		cost = 4
 	
 		x = 0
@@ -2555,11 +2667,11 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_military
 		cost = 6
 	
-		x = -2
+		x = 0
 		y = 1
-		relative_position_id = MIN_focus_82
+		relative_position_id = MIN_focus_41
 
-		prerequisite = { focus = MIN_focus_82 }
+		prerequisite = { focus = MIN_focus_41 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -2787,7 +2899,7 @@ focus_tree = {
 	# 发展近地支援机
 	focus = {
 		id = MIN_focus_92
-		icon = GFX_goal_generic_air_fighter
+		icon = GFX_goal_generic_air_bomber
 		cost = 7
 	
 		x = 0
@@ -2803,7 +2915,7 @@ focus_tree = {
 			focus = MIN_focus_74
 		}
 		mutually_exclusive = {
-			focus = MIN_focus_92
+			focus = MIN_focus_93
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -2819,7 +2931,7 @@ focus_tree = {
 	# 发展战术轰炸机
 	focus = {
 		id = MIN_focus_93
-		icon = GFX_goal_generic_air_fighter
+		icon = GFX_goal_generic_air_bomber
 		cost = 7
 	
 		x = 0
@@ -2874,6 +2986,386 @@ focus_tree = {
 				uses = 1
 				category = jet_technology
 			}
+		}
+	}
+
+	# 建设防空火力网
+	focus = {
+		id = MIN_focus_95
+		icon = GFX_focus_SOV_organize_wreckers
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_70
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = MIN_focus_70
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = MIN_build_antiaircraft_gun
+
+			47 = {
+				set_building_level  = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {	
+				limit = {
+					NOT = {
+						state = 47
+					}
+				}
+				set_building_level  = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# 资助西米诺斯岛链回归运动
+	focus = {
+		id = MIN_focus_96
+		icon = GFX_focus_CZE_german_puppet
+		cost = 7
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_50
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = MIN_focus_50
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			965 = {
+				add_dynamic_modifier = { modifier = incite_resistance }
+			}
+		}
+	}
+
+	# 与乌萨斯旧贵族协商
+	focus = {
+		id = MIN_focus_97
+		icon = GFX_focus_GRE_bedrock_of_balkan_stability
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_96
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			965 = {
+				resistance > 30
+			}
+		}
+
+		prerequisite = {
+			focus = MIN_focus_96
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			transfer_state = 965
+			remove_ideas = MIN_Incomplete_country_idea
+		}
+	}
+
+	# 适应环境
+	focus = {
+		id = MIN_focus_98
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_30
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		prerequisite = { focus = MIN_focus_78 }
+		prerequisite = { focus = MIN_focus_77 }
+		prerequisite = { focus = MIN_focus_30 }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_ideas = MIN_adapt_to_the_environment
+		}
+	}
+
+	# 米诺斯战争部
+	focus = {
+		id = MIN_focus_99
+		icon = GFX_focus_usa_build_the_pentagon
+		cost = 4
+	
+		x = 52
+		y = 0
+		# relative_position_id = MIN_focus_30
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_ideas = MIN_ministry_of_war
+		}
+	}
+
+	# 重视特种作战
+	focus = {
+		id = MIN_focus_100
+		icon = GFX_focus_eng_special_air_service
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_29
+		
+		prerequisite = {
+			focus = MIN_focus_29
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_ideas = MIN_special_operations
+			custom_effect_tooltip = available_chief_of_army
+			custom_effect_tooltip = MIN_ceobe
+		}
+	}
+
+	# 与中央非洲共同进步
+	focus = {
+		id = MIN_focus_101
+		icon = GFX_goal_continuous_research
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_85
+		
+		prerequisite = { focus = MIN_focus_84 }
+		prerequisite = { focus = MIN_focus_85 }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_to_tech_sharing_group = MIN_allied_research
+			MSZ = {
+				add_to_tech_sharing_group = MIN_allied_research
+			}
+		}
+	}
+
+	# 协同进攻
+	focus = {
+		id = MIN_focus_102
+		icon = GFX_focus_SOV_women_in_aviation
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_72
+		
+		prerequisite = { focus = MIN_focus_46 }
+		prerequisite = { focus = MIN_focus_72 }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = MIN_air_and_army_attack
+		}
+	}
+
+	# 虎狼之师
+	focus = {
+		id = MIN_focus_103
+		icon = GFX_focus_MIN_good_special_operations_force
+		cost = 7
+	
+		x = 2
+		y = 1
+		relative_position_id = MIN_focus_98
+		
+		prerequisite = { focus = MIN_focus_98 }		
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = {
+			focus = MIN_focus_104			
+		}
+		completion_reward = {
+			add_ideas = MIN_good_special_operations_force
+		}
+	}
+	
+	# 量变引起质变
+	focus = {
+		id = MIN_focus_104
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		cost = 7
+	
+		x = -2
+		y = 1
+		relative_position_id = MIN_focus_98
+		
+		prerequisite = { focus = MIN_focus_98 }		
+		mutually_exclusive = {
+			focus = MIN_focus_103
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = MIN_many_special_operations_force
+		}
+	}
+
+	# 弥补海军火力不足
+	focus = {
+		id = MIN_focus_105
+		icon = GFX_focus_usa_escort_fighters
+		cost = 7
+	
+		x = -4
+		y = 1
+		relative_position_id = MIN_focus_35
+		
+		prerequisite = { focus = MIN_focus_35 }		
+		prerequisite = { 
+			focus = MIN_focus_73
+			focus = MIN_focus_74
+		}		
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	# 精准投掷训练
+	focus = {
+		id = MIN_focus_106
+		icon = GFX_goal_generic_navy_carrier
+		cost = 7
+	
+		x = 0
+		y = 1
+		relative_position_id = MIN_focus_105
+		
+		prerequisite = { focus = MIN_focus_34 }		
+		prerequisite = { focus = MIN_focus_105 }		
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = MIN_precise_throwing
+		}
+	}
+
+	# 无限制潜艇战
+	focus = {
+		id = MIN_focus_107
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 7
+	
+		x = 0
+		y = 2
+		relative_position_id = MIN_focus_53
+		
+		prerequisite = { focus = MIN_focus_39 }
+		prerequisite = { focus = MIN_focus_53 }
+		prerequisite = { focus = MIN_focus_91 }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = MIN_unrestricted_submarine_warfare
+		}
+	}
+
+	# 抢滩登陆练习
+	focus = {
+		id = MIN_focus_108
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 7
+	
+		x = -1
+		y = 3
+		relative_position_id = MIN_focus_34
+		
+		prerequisite = { focus = MIN_focus_34 }		
+		prerequisite = { focus = MIN_focus_46 }			
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = MIN_beach_landing_practice
 		}
 	}
 }

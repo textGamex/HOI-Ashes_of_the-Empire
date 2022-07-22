@@ -52,7 +52,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.60
 				war_support_factor  = -0.60
-				conscription_factor = -0.60
+				
 				Army_org_factor = -0.15
 				drift_defence_factor = -0.30
 			}
@@ -100,6 +100,41 @@ ideas = {
 			}
 			research_bonus = {
 				air_equipment = -0.80
+			}
+		}
+
+		# 逃兵役
+		AEG_deserter = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				conscription_factor = -0.70
+			}
+		}
+
+		# 不适应陆地作战的部队
+		AEG_troops_unfit_for_land_operations = {
+			allowed = {
+				original_tag = AEG
+			}
+			picture = ger_revive_the_kaiserreich				
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				acclimatization_cold_climate_gain_factor = -0.30
+				acclimatization_hot_climate_gain_factor = -0.30
+				army_attack_factor = -0.30
+				Army_defence_factor = -0.20
 			}
 		}
 	}

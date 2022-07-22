@@ -11,3 +11,9 @@
  HSI_feudal_aristocratic_DEF:0 "海嗣"
  HSI_ADJ:0 "海嗣"
  haisi:0 "海嗣"
+ 
+ MIN_Roman_Empire_religiosity:0 "罗马帝国"
+ MIN_Roman_Empire_religiosity_DEF:0 "罗马帝国"
+ MIN_Roman_Empire_feudal_aristocratic:0 "罗马帝国"
+ MIN_Roman_Empire_feudal_aristocratic_DEF:0 "罗马帝国"
+ MIN_Roman_Empire_ADJ:0 "罗马帝国"

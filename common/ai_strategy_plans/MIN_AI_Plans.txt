@@ -26,6 +26,7 @@ MIN_historical = {
 		MIN_focus_31
 		MIN_focus_32
 		MIN_focus_50
+		MIN_focus_99
 		MIN_focus_42
 		MIN_focus_43
 		MIN_focus_26
@@ -35,7 +36,7 @@ MIN_historical = {
 		MIN_focus_27
 		MIN_focus_22
 		MIN_focus_24
-		MIN_focus_25
+		MIN_focus_25	
 		MIN_focus_33
 		MIN_focus_35
 		MIN_focus_75
@@ -63,8 +64,9 @@ MIN_historical = {
 		MIN_focus_60
 		MIN_focus_63
 		MIN_focus_65		
-		MIN_focus_39
-		MIN_focus_38
+		MIN_focus_36		
+		MIN_focus_39	
+		MIN_focus_38	
 		MIN_focus_69
 		MIN_focus_73
 		MIN_focus_79

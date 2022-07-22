@@ -19,4 +19,9 @@ spriteTypes = {
 		name = "GFX_Governor_General_of_Africa"
 		texturefile = "gfx/interface/goals/Governor_General_of_Africa.dds"			
 	}
+
+	SpriteType = {
+		name = "GFX_focus_MIN_good_special_operations_force"
+		texturefile = "gfx/interface/goals/focus_MIN_good_special_operations_force.dds"			
+	}
 }

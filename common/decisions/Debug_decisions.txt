@@ -35,10 +35,16 @@ AOE_debug = {
 				add_state_core = 816
 				add_state_core = 812
 				add_state_core = 770
-
+				inherit_technology = MIN
 			}	
 			MIN = {
-				puppet = MSZ
+				# puppet = MSZ	
+				set_autonomy = {
+					target = MSZ
+					autonomy_state = autonomy_satellite
+					end_wars = no
+					end_civil_wars = no
+				}			
 			}
 		}
 	}
@@ -100,7 +106,7 @@ AOE_debug = {
 		}
 	}
 
-	HSI_add = {
+	HSI_add_naval_base = {
 		allowed = {
 			is_debug = yes
 		}	
@@ -142,7 +148,14 @@ AOE_debug = {
 					level = 10
 				}
 			}
+		}		
+	}
+
+	tets = {
+		complete_effect = {
+			MIN = {
+				set_cosmetic_tag = MIN_Roman_Empire
+			} 
 		}
-		
 	}
 }

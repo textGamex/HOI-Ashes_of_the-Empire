@@ -30,6 +30,7 @@ set_technology = {
 	synth_oil_experiments = 1
 	basic_train = 1
 	trade_interdiction = 1
+	interwar_antiair = 1
 }
 
 if = {
@@ -225,6 +226,9 @@ add_ideas = {
 
 recruit_character = MIN_high_priests
 recruit_character = MIN_sikadi
+recruit_character = MIN_ceobe
+recruit_character = MIN_vulcan
+recruit_character = MIN_conviction
 
 MIN = {
 	add_opinion_modifier = {
